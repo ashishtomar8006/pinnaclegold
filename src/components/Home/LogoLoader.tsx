@@ -5,7 +5,7 @@ import { motion, useMotionValue, useSpring, AnimatePresence } from "framer-motio
 import Image from "next/image"
 import { useEffect, useState } from "react"
 
-export default function Component() {
+export default function LogoLoader() {
   const [isLoaded, setIsLoaded] = useState(false)
   const mouseX = useMotionValue(0)
   const mouseY = useMotionValue(0)
