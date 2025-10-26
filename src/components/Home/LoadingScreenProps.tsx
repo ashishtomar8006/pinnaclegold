@@ -36,29 +36,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
     "/images/hero/banner5.jpg",
   ]
 
-  // Fixed particle positions to avoid hydration mismatch
-  const particlePositions = [
-    { left: 10, top: 20 },
-    { left: 25, top: 15 },
-    { left: 40, top: 30 },
-    { left: 55, top: 10 },
-    { left: 70, top: 25 },
-    { left: 85, top: 35 },
-    { left: 15, top: 50 },
-    { left: 30, top: 60 },
-    { left: 45, top: 45 },
-    { left: 60, top: 65 },
-    { left: 75, top: 55 },
-    { left: 90, top: 70 },
-    { left: 20, top: 80 },
-    { left: 35, top: 85 },
-    { left: 50, top: 75 },
-    { left: 65, top: 90 },
-    { left: 80, top: 85 },
-    { left: 95, top: 95 },
-    { left: 5, top: 40 },
-    { left: 12, top: 75 },
-  ]
+
 
   useEffect(() => {
     if (!isClient) return
@@ -146,26 +124,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
     },
   }
 
-  const particleVariants = {
-    animate: {
-      y: [0, -20, 0],
-      opacity: [0.3, 1, 0.3],
-      scale: [0.8, 1.2, 0.8],
-      transition: {
-        duration: 3,
-        repeat: Number.POSITIVE_INFINITY,
-        ease: "easeInOut" as const,
-      },
-    },
-  }
-
-  const floatingElements = [
-    { Icon: Home, delay: 0.5, x: -120, y: -80, size: 42 },
-    { Icon: Building, delay: 0.8, x: 150, y: -100, size: 38 },
-    { Icon: MapPin, delay: 1.1, x: -100, y: 80, size: 34 },
-    { Icon: Star, delay: 1.4, x: 120, y: 100, size: 30 },
-    { Icon: Sparkles, delay: 1.7, x: -150, y: 0, size: 36 },
-  ]
+  
 
   return (
     <AnimatePresence>
@@ -207,95 +166,9 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
           />
         </div>
 
-        {/* Animated Particles with Fixed Positions */}
-        <div className="absolute inset-0 overflow-hidden">
-          {particlePositions.map((position, i) => (
-            <motion.div
-              key={i}
-              variants={particleVariants}
-              animate="animate"
-              style={{
-                left: `${position.left}%`,
-                top: `${position.top}%`,
-                animationDelay: `${(i * 0.15) % 3}s`,
-              }}
-              className="absolute w-2 h-2 bg-white rounded-full opacity-30"
-            />
-          ))}
-        </div>
-
-        {/* Floating Property Icons */}
-        {floatingElements.map(({ Icon, delay, x, y, size }, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, scale: 0, rotate: -180 }}
-            animate={{
-              opacity: [0.2, 0.6, 0.2],
-              scale: [0.8, 1.2, 0.8],
-              rotate: [0, 360],
-              x: [0, x * 0.5, x, x * 0.5, 0],
-              y: [0, y * 0.5, y, y * 0.5, 0],
-            }}
-            transition={{
-              opacity: { duration: 4, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" },
-              scale: { duration: 3, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" },
-              rotate: { duration: 20, repeat: Number.POSITIVE_INFINITY, ease: "linear" },
-              x: { duration: 12, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" },
-              y: { duration: 10, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" },
-              delay,
-            }}
-            className="absolute text-white/40"
-            style={{
-              left: "50%",
-              top: "50%",
-              transform: "translate(-50%, -50%)",
-            }}
-          >
-            <Icon size={size} />
-          </motion.div>
-        ))}
-
+  
         {/* Main Content */}
         <div className="absolute bottom-16 z-10 text-center px-8 w-[500px]">
-          {/* Enhanced Progress Bar */}
-          {/* {!showEnterButton && ( */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 2 }}
-              className="mb-12"
-            >
-              <div className="w-full mx-auto">
-                <div className="flex justify-between text-sm text-gray-300 mb-4">
-                  <span className="font-medium">Loading Experience</span>
-                  <motion.span
-                    key={loadingProgress}
-                    initial={{ scale: 1.2 }}
-                    animate={{ scale: 1 }}
-                    className="font-bold text-primary"
-                  >
-                    {Math.round(loadingProgress)}%
-                  </motion.span>
-                </div>
-                <div className="relative h-3 bg-black/30 rounded-full overflow-hidden backdrop-blur-sm border border-white/10">
-                  <motion.div
-                    initial={{ width: 0 }}
-                    animate={{ width: `${loadingProgress}%` }}
-                    transition={{ duration: 0.3, ease: "easeOut" }}
-                    className="h-full bg-gradient-to-r from-primary via-purple-500 to-blue-500 rounded-full relative overflow-hidden"
-                  >
-                    <motion.div
-                      animate={{ x: [-100, 300] }}
-                      transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
-                      className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-12"
-                    />
-                  </motion.div>
-                </div>
-              </div>
-            </motion.div>
-          {/* )} */}
-
-          {/* Enhanced Enter Button */}
           <AnimatePresence>
             {showEnterButton && (
               <motion.div className="space-y-6">
@@ -308,20 +181,20 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
                   onClick={onComplete}
                   className="group relative px-6 py-2 border-white text-white font-bold rounded-full text-xl shadow-2xl border overflow-hidden backdrop-blur-sm"
                 >
-                  {/* Animated Background */}
+                
                   <motion.div
                     className="absolute inset-0 cursor-pointer bg-gradient-to-r from-blue-600 via-purple-600 to-primary opacity-0 group-hover:opacity-100"
                     transition={{ duration: 0.4 }}
                   />
 
-                  {/* Button Content */}
+                  
                   <span className="relative flex items-center gap-4 cursor-pointer">
                     <motion.span
                       animate={{ x: [0, 5, 0] }}
                       transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
                       className="cursor-pointer"
                     >
-                      Enter Website
+                      Exprience Website
                     </motion.span>
                     <motion.div
                       animate={{ x: [0, 8, 0], rotate: [0, 15, 0] }}

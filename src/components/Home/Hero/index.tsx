@@ -1,67 +1,92 @@
-'use client'
+"use client";
 
-import Image from 'next/image'
-import Link from 'next/link'
-import ProjectCounter from '../counter/ProjectCounter'
+import React from "react";
+import Slider from "react-slick";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-const Hero: React.FC = () => {
+const videos = [
+  "/videos/after-enter-button.mp4",
+  "/videos/slidervideo2.mp4",
+  "/videos/slidervideo3.mp4",
+];
+
+function NextArrow(props: any) {
+  const { onClick } = props;
   return (
-
-    <div className="min-h-screen flex flex-col justify-end items-center overflow-hidden relative pb-16">
-    <video
-      className="absolute inset-0 w-full h-full object-cover z-0"
-      autoPlay
-      loop
-      muted
-      playsInline
+    <div
+      className="absolute right-6 top-1/2 transform -translate-y-1/2 z-20 cursor-pointer bg-black/40 hover:bg-black/60 rounded-full p-2"
+      onClick={onClick}
     >
-      <source src="/videos/after-enter-button.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-  </div>
-
-
-    // <section className="relative h-screen w-full overflow-hidden">
-    //   {/* Background Image */}
-    //   <div className="absolute inset-0 z-0">
-    //     <Image
-    //       src="/images/hero/banner1.jpg"
-    //       alt="Hero Background"
-    //       fill
-    //       className="object-cover"
-    //       priority
-    //       unoptimized
-    //     />
-    //   </div>
-
-
-
-
-    //   {/* Overlay for gradient effect (optional) */}
-    //   {/* <div className="absolute   bg-gradient-to-b from-skyblue via-lightskyblue dark:via-[#4298b0] to-white/10 dark:to-black/10 z-10" /> */}
-
-    //   {/* Foreground Content */}
-    //   {/* <div className="relative z-20 container mx-auto px-5 2xl:px-0 pt-32 md:pt-36 md:pb-68 max-w-8xl text-white dark:text-dark">
-    //     <div className="text-center md:text-start">
-    //       <p className="text-lg font-medium">Palm Springs, CA</p>
-    //       <h1 className="text-6xl sm:text-9xl font-semibold -tracking-wider md:max-w-3xl mt-4 mb-6">
-    //         Futuristic Haven
-    //       </h1>
-    //       <div className="flex flex-col xs:flex-row justify-center md:justify-start gap-4">
-    //         <Link
-    //           href="/contactus"
-    //           className="px-8 py-4 border border-white bg-white text-dark dark:border-dark dark:bg-dark dark:text-white duration-300 dark:hover:text-dark hover:bg-transparent hover:text-white text-base font-semibold rounded-full"
-    //         >
-    //           Get in touch
-    //         </Link>
-    //         <button className="px-8 py-4 border border-white bg-transparent text-white dark:text-dark dark:border-dark hover:bg-white dark:hover:bg-dark dark:hover:text-white hover:text-dark duration-300 text-base font-semibold rounded-full">
-    //           View Details
-    //         </button>
-    //       </div>
-    //     </div>
-    //   </div> */}
-    // </section>
-  )
+      <ChevronRight className="h-6 w-6 text-white" />
+    </div>
+  );
 }
 
-export default Hero
+function PrevArrow(props: any) {
+  const { onClick } = props;
+  return (
+    <div
+      className="absolute left-6 top-1/2 transform -translate-y-1/2 z-20 cursor-pointer bg-black/40 hover:bg-black/60 rounded-full p-2"
+      onClick={onClick}
+    >
+      <ChevronLeft className="h-6 w-6 text-white" />
+    </div>
+  );
+}
+
+const Hero: React.FC = () => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    fade: true,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    speed: 1000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+    appendDots: (dots: React.ReactNode) => (
+      <div
+        style={{
+          position: "absolute",
+          bottom: "25px",
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <ul className="flex space-x-3"> {dots} </ul>
+      </div>
+    ),
+    customPaging: () => (
+      <div className="w-3 h-3 rounded-full bg-white/70 hover:bg-white transition-all duration-300" />
+    ),
+  };
+
+  return (
+    <div className="relative min-h-screen w-full overflow-hidden">
+      <Slider {...settings} className="relative">
+        {videos.map((src, index) => (
+          <div key={index} className="relative">
+            <video
+              className="w-full h-screen object-cover"
+              src={src}
+              autoPlay
+              loop
+              muted
+              playsInline
+            />
+            {/* Optional dark overlay */}
+            <div className="absolute inset-0 bg-black/30" />
+          </div>
+        ))}
+      </Slider>
+    </div>
+  );
+};
+
+export default Hero;

@@ -16,7 +16,7 @@ const GetInTouch: React.FC = () => {
             playsInline
             aria-label="Video background showing luxurious real estate"
           >
-            <source src="/videos/video.mp4" type="video/mp4" />
+            <source src="/videos/slidervideo2.mp4" type="video/mp4" />
             {"Your browser does not support the video tag."}
           </video>
           <div className="bg-black/30 absolute inset-0 flex items-center justify-center">
@@ -25,7 +25,7 @@ const GetInTouch: React.FC = () => {
             <div className="flex flex-col items-center gap-8 z-10">
               {" "}
               {/* Added z-10 to ensure text is above overlay */}
-              <h2 className="text-white lg:text-52 md:text-40 text-3xl max-w-3/4 text-center font-medium">
+              {/* <h2 className="text-white lg:text-52 md:text-40 text-3xl max-w-3/4 text-center font-medium">
                 {"Enter a realm where exquisite design and timeless luxury come together."}
               </h2>
               <Link
@@ -33,7 +33,7 @@ const GetInTouch: React.FC = () => {
                 className="bg-white py-4 px-8 rounded-full text-dark hover:bg-dark hover:text-white duration-300"
               >
                 Get In Touch
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>
