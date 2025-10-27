@@ -41,8 +41,6 @@ const Header: React.FC = () => {
 
   const isHomepage = pathname === "/";
 
-  
-
   return (
     <header
       className={`fixed h-24 py-1 z-50 w-full  transition-all duration-300 lg:px-0 px-4 ${
@@ -112,18 +110,20 @@ const Header: React.FC = () => {
                 className='dark:block hidden text-white'
               />
             </button> */}
+           
             <div className={`hidden md:block`}>
               <Link
                 href="#"
                 className={`text-base flex items-center gap-2 border-r pr-6 transition-colors duration-300
-                      ${
-                        sticky
-                          ? "text-black hover:text-primary border-black"
-                          : "text-white hover:text-primary border-white"
-                      }
-                    `}
+                  ${
+                    sticky
+                      ? "text-black hover:text-primary border-black"
+                      : "text-white hover:text-primary border-white"
+                  }
+                `}
               >
-                Bespoke Office Spaces
+                {/* <Icon icon={'ph:phone-bold'} width={24} height={24} /> */}
+                CROWN
               </Link>
             </div>
 
@@ -138,11 +138,10 @@ const Header: React.FC = () => {
                   }
                 `}
               >
-                {/* <Icon icon={'ph:phone-bold'} width={24} height={24} /> */}
-                Curated Retail Spaces
+                APEX
               </Link>
             </div>
-
+            
             <div className={`hidden md:block`}>
               <Link
                 href="#"
@@ -154,8 +153,52 @@ const Header: React.FC = () => {
                   }
                 `}
               >
-                {/* <Icon icon={'ph:phone-bold'} width={24} height={24} /> */}
-                Location
+                PRIME
+              </Link>
+            </div>
+            
+            <div className={`hidden md:block`}>
+              <Link
+                href="#"
+                className={`text-base flex items-center gap-2 border-r pr-6 transition-colors duration-300
+                  ${
+                    sticky
+                      ? "text-black hover:text-primary border-black"
+                      : "text-white hover:text-primary border-white"
+                  }
+                `}
+              >
+                CREST
+              </Link>
+            </div>
+        
+            <div className={`hidden md:block`}>
+              <Link
+                href="#"
+                className={`text-base flex items-center gap-2 border-r pr-6 transition-colors duration-300
+                  ${
+                    sticky
+                      ? "text-black hover:text-primary border-black"
+                      : "text-white hover:text-primary border-white"
+                  }
+                `}
+              >
+                ZENITH
+              </Link>
+            </div>
+
+             <div className={`hidden md:block`}>
+              <Link
+                href="#"
+                className={`text-base flex items-center gap-2 border-r pr-6 transition-colors duration-300
+                  ${
+                    sticky
+                      ? "text-black hover:text-primary border-black"
+                      : "text-white hover:text-primary border-white"
+                  }
+                `}
+              >
+                EVEREST
               </Link>
             </div>
 
@@ -237,7 +280,7 @@ const Header: React.FC = () => {
             </nav>
           </div>
 
-          <div className="flex flex-col gap-1 my-2 text-white">
+          {/* <div className="flex flex-col gap-1 my-2 text-white">
             <p className="text-base sm:text-xm font-normal text-white/40">
               Contact
             </p>
@@ -254,7 +297,7 @@ const Header: React.FC = () => {
             >
               +1-212-456-7890{" "}
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </header>
