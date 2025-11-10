@@ -1,35 +1,53 @@
 "use client";
-import { navLinks } from "@/app/api/navlink";
+
+import { navLinks, towers } from "@/app/api/navlink";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
-import { useEffect, useRef, useState, useCallback } from "react";
-import NavLink from "./Navigation/NavLink";
+import { useEffect, useRef, useState } from "react";
 import { useTheme } from "next-themes";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import NavLink from "./Navigation/NavLink";
 
 const Header: React.FC = () => {
   const [sticky, setSticky] = useState(false);
   const [navbarOpen, setNavbarOpen] = useState(false);
+  const [isTowersOpen, setIsTowersOpen] = useState(false);
   const { theme, setTheme } = useTheme();
   const pathname = usePathname();
 
-  const sideMenuRef = useRef<HTMLDivElement>(null);
+  const sideMenuRef = useRef<HTMLDivElement | null>(null);
+  const towersRef = useRef<HTMLDivElement | null>(null);
 
-  const handleClickOutside = (event: MouseEvent) => {
-    if (
-      sideMenuRef.current &&
-      !sideMenuRef.current.contains(event.target as Node)
-    ) {
-      setNavbarOpen(false);
-    }
-  };
+  const isHomepage = pathname === "/home";
 
-  const handleScroll = useCallback(() => {
-    setSticky(window.scrollY >= 50);
-  }, []);
+  const closeMenu = () => setNavbarOpen(false);
 
   useEffect(() => {
+    const handleScroll = () => {
+      if (typeof window !== "undefined") {
+        setSticky(window.scrollY >= 50);
+      }
+    };
+
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as Node | null;
+
+      // Close sidebar if click is outside it
+      if (
+        sideMenuRef.current &&
+        target &&
+        !sideMenuRef.current.contains(target)
+      ) {
+        setNavbarOpen(false);
+      }
+
+      // Close Towers dropdown if click is outside it
+      if (towersRef.current && target && !towersRef.current.contains(target)) {
+        setIsTowersOpen(false);
+      }
+    };
+
     window.addEventListener("scroll", handleScroll);
     document.addEventListener("mousedown", handleClickOutside);
 
@@ -37,205 +55,137 @@ const Header: React.FC = () => {
       window.removeEventListener("scroll", handleScroll);
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [handleScroll]);
-
-  const isHomepage = pathname === "/";
+  }, []);
 
   return (
-    <header
-      className={`fixed h-24 py-1 z-50 w-full  transition-all duration-300 lg:px-0 px-4 ${
-        sticky ? "top-3 rounded-full bg-white" : "top-0"
-      }`}
-    >
-      {/* <nav className={`container mx-auto max-w-8xl flex items-center justify-between py-4 duration-300 ${sticky ? "shadow-lg bg-white dark:bg-dark rounded-full top-5 px-4 " : "shadow-none top-0"}`}> */}
-      <nav
-        className={`container mx-auto max-w-8xl flex items-center justify-between py-4 duration-300 ${
-          sticky ? "" : "shadow-none top-0"
+    <>
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          sticky ? "bg-white shadow-sm py-3" : "bg-transparent py-4"
         }`}
       >
-        <div className="flex justify-between items-center gap-2 w-full">
-          <div>
-            <Link href="/">
-              <Image
-                src={`images/logo/${
-                  sticky ? `goldenicon.png` : `goldenicon.png`
-                }`}
-                alt="logo"
-                width={sticky ? 50 : 80}
-                height={40}
-                unoptimized={true}
-                className={`${
-                  isHomepage
-                    ? sticky
-                      ? "block dark:hidden"
-                      : "hidden"
-                    : sticky
-                    ? "block"
-                    : "block"
-                }`}
-              />
-              {/* <Image
-                src={'/images/logo/pinnacleLogo.png'}
-                alt='logo'
-                width={150}
-                height={68}
-                unoptimized={true}
-                className={`${isHomepage ? sticky ? "hidden dark:block" : "block" : sticky ? "dark:block hidden" : "dark:block hidden"}`}
-              /> */}
-              {/* <span className="text-3xl font-semibold italic text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 font-[cursive]">
-            Real eState
-          </span> */}
-            </Link>
-          </div>
-          <div className="flex items-center gap-2 sm:gap-6">
-            {/* <button
-              className='hover:cursor-pointer'
-              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-            >
-              <Icon
-                icon={'solar:sun-bold'}
-                width={32}
-                height={32}
-                className={`dark:hidden block ${isHomepage
-                  ? sticky
-                    ? 'text-dark'
-                    : 'text-white'
-                  : 'text-dark'
-                  }`}
-              />
-              <Icon
-                icon={'solar:moon-bold'}
-                width={32}
-                height={32}
-                className='dark:block hidden text-white'
-              />
-            </button> */}
-           
-            <div className={`hidden md:block`}>
-              <Link
-                href="#"
-                className={`text-base flex items-center gap-2 border-r pr-6 transition-colors duration-300
-                  ${
-                    sticky
-                      ? "text-black hover:text-primary border-black"
-                      : "text-white hover:text-primary border-white"
-                  }
-                `}
-              >
-                {/* <Icon icon={'ph:phone-bold'} width={24} height={24} /> */}
-                CROWN
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <nav className="flex items-center justify-between">
+            {/* Logo */}
+            <div>
+              <Link href="/" onClick={closeMenu}>
+                <Image
+                  src="/images/logo/goldenicon.png"
+                  alt="Logo"
+                  width={sticky ? 70 : 80}
+                  height={sticky ? 35 : 40}
+                  unoptimized
+                  className="transition-all duration-300"
+                />
               </Link>
             </div>
 
-            <div className={`hidden md:block`}>
-              <Link
-                href="#"
-                className={`text-base flex items-center gap-2 border-r pr-6 transition-colors duration-300
-                  ${
-                    sticky
-                      ? "text-black hover:text-primary border-black"
-                      : "text-white hover:text-primary border-white"
-                  }
-                `}
-              >
-                APEX
-              </Link>
-            </div>
-            
-            <div className={`hidden md:block`}>
-              <Link
-                href="#"
-                className={`text-base flex items-center gap-2 border-r pr-6 transition-colors duration-300
-                  ${
-                    sticky
-                      ? "text-black hover:text-primary border-black"
-                      : "text-white hover:text-primary border-white"
-                  }
-                `}
-              >
-                PRIME
-              </Link>
-            </div>
-            
-            <div className={`hidden md:block`}>
-              <Link
-                href="#"
-                className={`text-base flex items-center gap-2 border-r pr-6 transition-colors duration-300
-                  ${
-                    sticky
-                      ? "text-black hover:text-primary border-black"
-                      : "text-white hover:text-primary border-white"
-                  }
-                `}
-              >
-                CREST
-              </Link>
-            </div>
-        
-            <div className={`hidden md:block`}>
-              <Link
-                href="#"
-                className={`text-base flex items-center gap-2 border-r pr-6 transition-colors duration-300
-                  ${
-                    sticky
-                      ? "text-black hover:text-primary border-black"
-                      : "text-white hover:text-primary border-white"
-                  }
-                `}
-              >
-                ZENITH
-              </Link>
-            </div>
+            {/* Desktop Navigation - ONLY shown when NOT scrolled */}
+            {!sticky && (
+              <div className="hidden md:flex items-center gap-2 lg:gap-6">
+                {navLinks.map((item, index) => (
+                  <Link
+                    key={index}
+                    href={item.href}
+                    onClick={closeMenu}
+                    className={`text-sm lg:text-base font-medium px-3 py-2 rounded-md transition-all duration-300 relative group ${
+                      !isHomepage
+                        ? "text-gray-800 hover:text-primary"
+                        : "text-white hover:text-primary"
+                    }`}
+                  >
+                    {item.label}
+                    <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
+                  </Link>
+                ))}
 
-             <div className={`hidden md:block`}>
-              <Link
-                href="#"
-                className={`text-base flex items-center gap-2 border-r pr-6 transition-colors duration-300
-                  ${
-                    sticky
-                      ? "text-black hover:text-primary border-black"
-                      : "text-white hover:text-primary border-white"
-                  }
-                `}
-              >
-                EVEREST
-              </Link>
-            </div>
+                {/* Towers Dropdown - CLICK ONLY */}
+                <div ref={towersRef} className="relative">
+                  <button
+                    type="button"
+                    onClick={() => setIsTowersOpen((prev) => !prev)}
+                    className={`text-sm lg:text-base font-medium px-3 py-2 rounded-md transition-all duration-300 flex items-center gap-1 ${
+                      !isHomepage
+                        ? "text-gray-800 hover:text-primary"
+                        : "text-white hover:text-primary"
+                    }`}
+                    aria-haspopup="true"
+                    aria-expanded={isTowersOpen}
+                  >
+                    Towers
+                    <Icon
+                      icon="ph:caret-down"
+                      className={`transition-transform duration-300 ${
+                        isTowersOpen ? "rotate-180" : ""
+                      }`}
+                      width={16}
+                      height={16}
+                    />
+                  </button>
 
+                  {isTowersOpen && (
+                    <div className="absolute top-full left-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-xl z-50 overflow-hidden">
+                      {towers.map((tower, idx) => (
+                        <Link
+                          key={idx}
+                          href={tower.href}
+                          onClick={() => {
+                            setIsTowersOpen(false);
+                            closeMenu();
+                          }}
+                          className="block px-4 py-3 text-gray-800 hover:bg-gray-50 hover:text-primary transition-colors text-sm font-medium"
+                        >
+                          {tower.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
+
+            {/* Menu Button - Always Visible (opens sidebar) */}
             <div>
               <button
-                onClick={() => setNavbarOpen(!navbarOpen)}
-                className={`flex items-center gap-3 p-2 sm:px-5 sm:py-3 rounded-full font-semibold hover:cursor-pointer border
-                  
-                  ${
-                    sticky
-                      ? "text-black hover:text-primary border-black"
-                      : "text-white hover:text-primary border-white"
-                  }`}
-                aria-label="Toggle mobile menu"
+                onClick={() => setNavbarOpen((prev) => !prev)}
+                className={`p-2.5 rounded-full transition-colors ${
+                  sticky
+                    ? "text-gray-800 hover:bg-gray-100"
+                    : isHomepage
+                    ? "text-white hover:bg-white/10"
+                    : "text-gray-800 hover:bg-gray-100"
+                }`}
+                aria-label="Toggle menu"
               >
-                <span>
-                  <Icon icon={"ph:list"} width={24} height={24} />
-                </span>
-                <span className="hidden sm:block">Menu</span>
+                <Icon
+                  icon={navbarOpen ? "ph:x" : "ph:list"}
+                  width={24}
+                  height={24}
+                />
               </button>
             </div>
-          </div>
+          </nav>
         </div>
-      </nav>
+      </header>
 
+      {/* Overlay for sidebar */}
       {navbarOpen && (
-        <div className="fixed top-0 left-0 w-full h-full bg-black/50 z-40" />
+        <div
+          className="fixed top-0 left-0 w-full h-full bg-black/50 z-40"
+          onClick={() => setNavbarOpen(false)}
+        />
       )}
 
+      {/* Sidebar (menu icon -> this opens) */}
       <div
         ref={sideMenuRef}
-        className={`fixed top-0 right-0 h-full w-full bg-dark shadow-lg transition-transform duration-300 max-w-2xl ${
+        className={`fixed top-0 right-0 w-[400px] h-full bg-dark shadow-lg transition-transform duration-300 max-w-4xl ${
           navbarOpen ? "translate-x-0" : "translate-x-full"
-        } z-50 px-20 overflow-auto no-scrollbar`}
+        } z-50 px-6 sm:px-10 md:px-20 overflow-auto no-scrollbar`}
       >
         <div className="flex flex-col h-full justify-between">
-          <div className="">
+          <div>
+            {/* Close button */}
             <div className="flex items-center justify-start py-10">
               <button
                 onClick={() => setNavbarOpen(false)}
@@ -259,48 +209,55 @@ const Header: React.FC = () => {
                 </svg>
               </button>
             </div>
-            <nav className="flex flex-col items-start gap-4">
-              <ul className="w-full">
+
+            {/* Sidebar Nav */}
+            <nav className="flex flex-col items-start gap-8">
+              {/* <ul className="w-full space-y-4">
                 {navLinks.map((item, index) => (
-                  <NavLink
-                    key={index}
-                    item={item}
-                    onClick={() => setNavbarOpen(false)}
-                  />
+                  <li key={index}>
+                    <Link
+                      href={item.href}
+                      onClick={() => setNavbarOpen(false)}
+                      className="block text-white text-2xl font-medium hover:text-primary transition-colors"
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
                 ))}
-                {/* <li className='flex items-center gap-4'>
-                  <Link href="/signin" className='py-4 px-8 bg-primary text-base leading-4 block w-fit text-white rounded-full border border-primary font-semibold mt-3 hover:bg-transparent hover:text-primary duration-300'>
-                    Sign In
-                  </Link>
-                  <Link href="/" className='py-4 px-8 bg-transparent border border-primary text-base leading-4 block w-fit text-primary rounded-full font-semibold mt-3 hover:bg-primary hover:text-white duration-300'>
-                    Sign up
-                  </Link>
-                </li> */}
-              </ul>
+              </ul> */}
+
+              {/* Towers section inside sidebar (optional but useful) */}
+              <div className="w-full mt-6">
+                <h4 className="text-gray-400 uppercase tracking-wider text-xs font-semibold mb-3">
+                  Towers
+                </h4>
+                <ul className="space-y-3">
+                  {/* {towers.map((tower, idx) => (
+                    <li key={idx}>
+                      <Link
+                        href={tower.href}
+                        onClick={() => setNavbarOpen(false)}
+                        className="block text-white text-lg font-medium hover:text-primary transition-colors"
+                      >
+                        {tower.label}
+                      </Link>
+                    </li>
+                  ))} */}
+
+                  {towers.map((item, index) => (
+                    <NavLink
+                      key={index}
+                      item={item}
+                      onClick={() => setNavbarOpen(false)}
+                    />
+                  ))}
+                </ul>
+              </div>
             </nav>
           </div>
-
-          {/* <div className="flex flex-col gap-1 my-2 text-white">
-            <p className="text-base sm:text-xm font-normal text-white/40">
-              Contact
-            </p>
-
-            <Link
-              href="#"
-              className="text-base sm:text-xm font-medium text-inherit hover:text-primary"
-            >
-              hello@homely.com
-            </Link>
-            <Link
-              href="#"
-              className="text-base sm:text-xm font-medium text-inherit hover:text-primary"
-            >
-              +1-212-456-7890{" "}
-            </Link>
-          </div> */}
         </div>
       </div>
-    </header>
+    </>
   );
 };
 

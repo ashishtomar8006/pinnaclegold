@@ -70,6 +70,15 @@ html {
   /* Firefox */
 }
 
+/* Optional: Fade out nav links on scroll */
+.nav-links-container {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.sticky .nav-links-container {
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+}
 section {
   @apply py-24
 }

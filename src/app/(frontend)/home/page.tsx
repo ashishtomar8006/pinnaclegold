@@ -9,12 +9,14 @@ import FAQ from '@/components/Home/FAQs'
 import ProjectCounter from '@/components/Home/counter/ProjectCounter'
 import AboutSection from '@/components/Home/aboutus/page'
 import SingleImageScroll from '@/components/Home/motion/SingleImageScroll'
+import DirectorSection from '@/components/Home/director/page'
 
 export default function Home() { 
   return (
     <main>
       <Hero />
       <AboutSection />
+      <DirectorSection />
       <SingleImageScroll />
       <ProjectCounter/>
       <GetInTouch />

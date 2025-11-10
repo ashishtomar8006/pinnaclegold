@@ -45,12 +45,12 @@ const Testimonial = () => {
             </div>
             <div className="container max-w-8xl mx-auto px-5 2xl:px-0">
                 <div>
-                    {/* <p className="text-white text-base font-semibold flex gap-2">
+                    <p className="text-white text-base font-semibold flex gap-2">
                         <Icon icon="ph:house-simple-fill" className="text-2xl text-primary" />
                         Testimonials
-                    </p> */}
-                    <h2 className="lg:text-52 text-40 font-medium text-white flex items-center gap-4">
-                    <Icon icon="ph:house-simple-fill" className="text-2xl text-primary" />   The Architect
+                    </p>
+                    <h2 className="lg:text-52 text-40 font-medium text-white">
+                        What our clients say
                     </h2>
                 </div>
                 <Carousel
@@ -68,7 +68,7 @@ const Testimonial = () => {
                                             <Icon icon="ph:house-simple" width={32} height={32} className="text-primary" />
                                         </div>
                                         <div>
-                                            <h4 className="text-gray-400 lg:text-xl text-xl">{item.review}</h4>
+                                            <h4 className="text-white lg:text-3xl text-2xl">{item.review}</h4>
                                             <div className="flex items-center mt-8 gap-6">
                                                 <Image
                                                     src={item.image}
@@ -100,7 +100,7 @@ const Testimonial = () => {
                         ))}
                     </CarouselContent>
                 </Carousel>
-                {/* <div className="absolute bottom-24 left-1/2 transform -translate-x-1/2 flex gap-2.5 p-2.5 bg-white/20 rounded-full">
+                <div className="absolute bottom-24 left-1/2 transform -translate-x-1/2 flex gap-2.5 p-2.5 bg-white/20 rounded-full">
                     {Array.from({ length: count }).map((_, index) => (
                         <button
                             key={index}
@@ -110,7 +110,7 @@ const Testimonial = () => {
                             aria-label={`Go to slide ${index + 1}`}
                         />
                     ))}
-                </div> */}
+                </div>
             </div>
         </section>
     );

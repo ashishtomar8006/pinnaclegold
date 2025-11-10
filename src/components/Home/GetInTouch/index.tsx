@@ -5,7 +5,7 @@ const GetInTouch: React.FC = () => {
   return (
     <section>
       <div className="container max-w-8xl mx-auto px-5 2xl:px-0">
-        <div className="relative rounded-t-2xl overflow-hidden lg:py-64 md:py-28 py-10">
+        <div className="relative rounded-2xl overflow-hidden lg:py-64 md:py-28 py-10">
           {" "}
           {/* Moved padding to parent to define height */}
           <video
@@ -37,7 +37,7 @@ const GetInTouch: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="w-full py-5 bg-primary rounded-b-2xl overflow-hidden">
+        {/* <div className="w-full py-5 bg-primary rounded-b-2xl overflow-hidden">
           <div className="flex items-center gap-40 animate-slide">
             <p className="text-white whitespace-nowrap relative after:absolute after:w-20 after:h-px after:bg-white after:top-3 after:-right-32">
               {"GET A FREE PROPERTY VALUATION—SELL YOUR HOME WITH CONFIDENCE!"}
@@ -52,7 +52,7 @@ const GetInTouch: React.FC = () => {
               {"BROWSE THOUSANDS OF LISTINGS IN PRIME LOCATIONS AT GREAT PRICES!"}
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   )

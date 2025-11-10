@@ -1,90 +1,166 @@
+"use client";
 import Link from "next/link";
-import { Icon } from "@iconify/react"
+import { Icon } from "@iconify/react";
 import { FooterLinks } from "@/app/api/footerlinks";
 
 const Footer = () => {
   return (
-    <footer className="relative z-10 bg-dark">
-      <div className="container mx-auto max-w-8xl pt-14 px-4 sm:px-6 lg:px-0">
-        <div className="flex lg:items-center justify-between items-end lg:gap-11 pb-14 border-b border-white/10 lg:flex-nowrap flex-wrap gap-6">
-          <p className="text-white text-sm lg:max-w-1/5">
-            Stay updated with the latest news,
-            promotions, and exclusive offers.
-          </p>
-          <div className="flex lg:flex-row flex-col items-center lg:gap-10 gap-3">
-            <div className="flex gap-2 lg:order-1 order-2">
-              <input type="email" placeholder="Enter Your Email" className="rounded-full py-4 px-6 bg-white/10 placeholder:text-white text-white focus-visible:outline-0" />
-              <button className="text-dark bg-white py-4 px-8 font-semibold rounded-full hover:bg-primary hover:text-white duration-300 hover:cursor-pointer">
-                Subscribe
-              </button>
-            </div>
-            <p className="text-white/40 text-sm lg:max-w-[45%] order-1 lg:order-2">
-              By subscribing, you agree to receive our promotional emails. You can unsubscribe  at any time.
-            </p>
-          </div>
-          <div className="flex items-center gap-6">
-            <Link href="#">
-              <Icon icon="ph:x-logo-bold" width={24} height={24} className="text-white hover:text-primary duration-300" />
-            </Link>
-            <Link href="#">
-              <Icon icon="ph:facebook-logo-bold" width={24} height={24} className="text-white hover:text-primary duration-300" />
-            </Link>
-            <Link href="#">
-              <Icon icon="ph:instagram-logo-bold" width={24} height={24} className="text-white hover:text-primary duration-300" />
-            </Link>
-          </div>
-        </div>
-        <div className="py-16 border-b border-white/10">
-          <div className="grid grid-cols-12 sm:gap-10 gap-y-6">
-            <div className="md:col-span-7 col-span-12">
-              <h2 className="text-white leading-[1.2] text-40 font-medium mb-6 lg:max-w-3/4">
-                Begin your path to
-                success contact us today.
-              </h2>
-              <Link href="/contactus" className="bg-primary text-base font-semibold py-4 px-8 rounded-full text-white hover:bg-white hover:text-dark duration-300 hover:cursor-pointer">
+    <footer className="relative z-10 bg-gradient-to-b from-gray-900 via-gray-800 to-black text-white overflow-hidden">
+      {/* Subtle background pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="smallGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="0.5" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#smallGrid)" />
+        </svg>
+      </div>
+
+      <div className="container mx-auto max-w-7xl pt-16 px-6 sm:px-12 lg:px-8 relative z-10">
+        {/* Main Content */}
+        <div className="py-20 border-b border-white/10">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 items-start">
+            
+            {/* Left Column - CTA + Newsletter */}
+            <div className="md:col-span-7 col-span-12 space-y-10">
+              
+              {/* Headline */}
+              <div className="space-y-4">
+                <h2 className="text-4xl md:text-5xl font-extrabold leading-tight bg-gradient-to-r from-white via-primary to-white bg-clip-text text-transparent">
+                  Begin Your Path to Success
+                </h2>
+                <p className="text-xl text-white/80 max-w-2xl">
+                  Let’s build something extraordinary together. Reach out today.
+                </p>
+              </div>
+
+              {/* CTA Button */}
+              {/* <Link
+                href="/contactus"
+                className="inline-flex items-center gap-3 bg-gradient-to-r from-primary to-secondary px-8 py-4 rounded-full text-white font-semibold text-lg hover:shadow-lg hover:scale-105 active:scale-95 transition-all duration-300 w-max group"
+              >
                 Get In Touch
-              </Link>
+                <Icon icon="ph:arrow-right-bold" className="group-hover:translate-x-1 transition-transform" width={20} height={20} />
+              </Link> */}
+
+              {/* Newsletter Form */}
+              <div className="max-w-md">
+                <form className="relative" onSubmit={(e) => e.preventDefault()}>
+                  <input
+                    type="email"
+                    placeholder=" "
+                    className="w-full rounded-full py-4 px-6 bg-white/5 backdrop-blur-sm border border-white/10 placeholder-transparent text-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all peer"
+                    required
+                  />
+                  <label className="absolute left-6 top-1/2 -translate-y-1/2 text-white/60 text-sm pointer-events-none transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-1 peer-focus:text-xs peer-focus:text-primary">
+                    Enter your email address
+                  </label>
+                  <button
+                    type="submit"
+                    className="absolute right-1 top-1/2 -translate-y-1/2 bg-white text-dark px-6 py-2.5 font-semibold rounded-full hover:bg-primary hover:text-white transition-all duration-300 shadow-md hover:shadow-lg"
+                    aria-label="Subscribe"
+                  >
+                    <span className="hidden sm:inline">Subscribe</span>
+                    <Icon icon="ph:paper-plane-tilt-fill" className="sm:hidden" width={20} height={20} />
+                  </button>
+                </form>
+              </div>
+
+              {/* Social & Contact Info */}
+              <div className="flex flex-wrap items-center gap-x-8 gap-y-4 pt-8">
+                <div className="flex items-center gap-4">
+                  <Link
+                    href="https://www.instagram.com/thepinnaclebystj/"
+                    aria-label="Instagram"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white hover:text-primary transform hover:scale-110 transition-all duration-300"
+                  >
+                    <Icon icon="ph:instagram-logo-fill" width={32} height={32} />
+                  </Link>
+                  <Link
+                    href="https://www.facebook.com/profile.php?id=61565598643707"
+                    aria-label="Facebook"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white hover:text-primary transform hover:scale-110 transition-all duration-300"
+                  >
+                    <Icon icon="ph:facebook-logo-fill" width={32} height={32} />
+                  </Link>
+                </div>
+
+                <div className="h-8 w-px bg-white/20"></div>
+
+                <Link
+                  href="mailto:thepinnacle@thestjgroup.com"
+                  className="text-white/80 hover:text-primary transition-colors flex items-center gap-2 group"
+                >
+                  <Icon icon="ph:envelope-simple-fill" className="text-primary group-hover:scale-110 transition-transform" width={20} height={20} />
+                  thepinnacle@thestjgroup.com
+                </Link>
+
+                <div className="h-8 w-px bg-white/20"></div>
+
+                <span className="flex items-center gap-2 text-white/80">
+                  <Icon icon="ph:phone-fill" className="text-primary" width={20} height={20} />
+                  83445-83445
+                </span>
+              </div>
             </div>
-            <div className="md:col-span-3 sm:col-span-6 col-span-12">
-              <div className="flex flex-col gap-4 w-fit">
-                {FooterLinks.slice(0, 4).map((item, index) => (
-                  <div key={index}>
-                    <Link href={item.href} className="text-white/40 text-xm hover:text-white">
-                      {item.label}
-                    </Link>
-                  </div>
+
+            {/* Navigation Columns */}
+            <div className="md:col-span-2 col-span-6">
+              <h3 className="font-semibold text-lg mb-5 tracking-wide text-white">Explore</h3>
+              <div className="flex flex-col gap-3">
+                {FooterLinks.slice(0, 3).map((item, index) => (
+                  <Link
+                    key={index}
+                    href={item.href}
+                    className="text-white/70 text-sm hover:text-white hover:translate-x-1 transition-all duration-200 font-medium relative pl-1 before:content-[''] before:absolute  before:left-0 before:top-1/2 before:h-1 before:w-0 before:bg-primary before:rounded-full before:transition-all before:duration-300 hover:before:w-3"
+                  >
+                    {item.label}
+                  </Link>
                 ))}
               </div>
             </div>
-            <div className="md:col-span-2 sm:col-span-6 col-span-12">
-              <div className="flex flex-col gap-4 w-fit">
-                {FooterLinks.slice(4, 8).map((item, index) => (
-                  <div key={index}>
-                    <Link href={item.href} className="text-white/40 text-xm hover:text-white">
-                      {item.label}
-                    </Link>
-                  </div>
+
+            <div className="md:col-span-3 col-span-6">
+              <h3 className="font-semibold text-lg mb-5 tracking-wide text-white">Legal & Support</h3>
+              <div className="flex flex-col gap-3">
+                {FooterLinks.slice(3, 6).map((item, index) => (
+                  <Link
+                    key={index}
+                    href={item.href}
+                    className="text-white/70 text-sm hover:text-white hover:translate-x-1 transition-all duration-200 font-medium relative pl-1 before:content-[''] before:absolute before:left-0 before:top-1/2 before:h-1 before:w-0 before:bg-primary before:rounded-full before:transition-all before:duration-300 hover:before:w-3"
+                  >
+                    {item.label}
+                  </Link>
                 ))}
               </div>
             </div>
           </div>
         </div>
-        <div className="flex justify-between md:flex-nowrap flex-wrap items-center py-6 gap-6">
-          <p className="text-white/40 text-sm ">
-            ©2025 Real State
-            {/* <Link href="https://getnextjstemplates.com/" className="hover:text-primary" target="_blanck">GetNextJs Templates</Link> */}
-          </p>
-          <div className="flex gap-8 items-center">
-            <Link href="#" className="text-white/40 hover:text-primary text-sm">
-              Terms of service
+
+        {/* Bottom Bar */}
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 py-8 font-medium text-white/50 text-sm">
+          <p>© {new Date().getFullYear()} Real State. All rights reserved.</p>
+          <div className="flex gap-6">
+            <Link href="#" className="hover:text-primary hover:underline underline-offset-4 decoration-primary/30 decoration-2 transition-all">
+              Terms of Service
             </Link>
-            <Link href="#" className="text-white/40 hover:text-primary text-sm">
-              Privacy policy
+            <Link href="#" className="hover:text-primary hover:underline underline-offset-4 decoration-primary/30 decoration-2 transition-all">
+              Privacy Policy
             </Link>
           </div>
         </div>
       </div>
-    </footer >
+
+      {/* Decorative Corner Elements */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl -z-10"></div>
+    </footer>
   );
 };
 
