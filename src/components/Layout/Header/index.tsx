@@ -131,7 +131,7 @@ const Header: React.FC = () => {
             <div>
               <button
                 onClick={() => setNavbarOpen((prev) => !prev)}
-                className={`p-2.5 rounded-full transition-colors ${
+                className={`p-2.5 cursor-pointer rounded-full transition-colors ${
                   sticky
                     ? "text-gray-800 hover:bg-gray-100"
                     : isHomepage
@@ -210,7 +210,7 @@ const Header: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setIsTowersOpen((prev) => !prev)}
-                className="flex items-center justify-between w-full text-white text-2xl font-medium hover:text-primary transition-colors"
+                className="flex cursor-pointer items-center justify-between w-full text-white text-2xl font-medium hover:text-primary transition-colors"
                 aria-expanded={isTowersOpen}
               >
                 <span>Towers</span>

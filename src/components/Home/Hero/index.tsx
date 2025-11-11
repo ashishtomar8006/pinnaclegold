@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 import Slider from "react-slick";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import "slick-carousel/slick/slick.css";
@@ -12,51 +12,57 @@ const videos = [
   "/videos/slidervideo3.mp4",
 ];
 
-function NextArrow(props: any) {
-  const { onClick } = props;
+// Custom Arrow Components
+function NextArrow({ onClick }: { onClick?: () => void }) {
   return (
     <div
-      className="absolute right-6 top-1/2 transform -translate-y-1/2 z-20 cursor-pointer bg-black/40 hover:bg-black/60 rounded-full p-2"
+      className="absolute right-6 top-1/2 transform -translate-y-1/2 z-20 cursor-pointer bg-[#c8ac6e] hover:bg-[#c8ac6e] rounded-full p-3 transition-all duration-300"
       onClick={onClick}
+      role="button"
+      aria-label="Next slide"
     >
-      <ChevronRight className="h-6 w-6 text-white" />
+      <ChevronRight className="h-7 w-7 text-white" />
     </div>
   );
 }
 
-function PrevArrow(props: any) {
-  const { onClick } = props;
+function PrevArrow({ onClick }: { onClick?: () => void }) {
   return (
     <div
-      className="absolute left-6 top-1/2 transform -translate-y-1/2 z-20 cursor-pointer bg-black/40 hover:bg-black/60 rounded-full p-2"
+      className="absolute left-6 top-1/2 transform -translate-y-1/2 z-20 cursor-pointer bg-[#c8ac6e] hover:bg-[#c8ac6e] rounded-full p-3 transition-all duration-300"
       onClick={onClick}
+      role="button"
+      aria-label="Previous slide"
     >
-      <ChevronLeft className="h-6 w-6 text-white" />
+      <ChevronLeft className="h-7 w-7 text-white" />
     </div>
   );
 }
 
 const Hero: React.FC = () => {
+  const sliderRef = useRef<Slider>(null);
+
   const settings = {
     dots: true,
     infinite: true,
     fade: true,
-    autoplay: true,
-    autoplaySpeed: 5000, // 5 seconds delay between slides
-    speed: 1000, // 1 second fade transition duration
+    autoplay: true, // ✅ Fixed casing
+    autoplaySpeed: 5000, // 5s between auto slides
+    speed: 1000, // 1s fade transition
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: true,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow onClick={() => sliderRef.current?.slickNext()} />, // ✅ Fixed arrow binding
+    prevArrow: <PrevArrow onClick={() => sliderRef.current?.slickPrev()} />, // ✅ Fixed arrow binding
     appendDots: (dots: React.ReactNode) => (
       <div
         style={{
           position: "absolute",
-          bottom: "25px",
+          bottom: "30px",
           width: "100%",
           display: "flex",
           justifyContent: "center",
+          zIndex: 20,
         }}
       >
         <ul className="flex space-x-3">{dots}</ul>
@@ -65,23 +71,50 @@ const Hero: React.FC = () => {
     customPaging: () => (
       <div className="w-3 h-3 rounded-full bg-white/70 hover:bg-white transition-all duration-300" />
     ),
+    beforeChange: (current: number, next: number) => {
+      // Pause all videos before changing slide
+      const videoElements = document.querySelectorAll("video");
+      videoElements.forEach((video) => {
+        if (!video.paused) video.pause();
+      });
+
+      // Play next video after small delay (optional)
+      setTimeout(() => {
+        const nextVideo = document.querySelector(
+          `#hero-video-${next}`
+        ) as HTMLVideoElement | null;
+        if (nextVideo) {
+          nextVideo.play().catch((err) => console.warn("Autoplay failed:", err));
+        }
+      }, 500);
+    },
   };
 
   return (
     <div className="relative min-h-screen w-full overflow-hidden">
-      <Slider {...settings} className="relative">
+      <Slider {...settings} ref={sliderRef}>
         {videos.map((src, index) => (
-          <div key={index} className="relative">
+          <div key={index} className="relative w-full h-screen">
             <video
-              className="w-full h-screen object-cover"
+              id={`hero-video-${index}`}
+              className="w-full h-full object-cover"
               src={src}
-              autoPlay
               loop
               muted
               playsInline
-            />
-            {/* Optional dark overlay */}
-            <div className="absolute inset-0 bg-black/30" />
+              disablePictureInPicture
+              controls={false}
+            >
+              Your browser does not support the video tag.
+            </video>
+
+            {/* Dark overlay for better text contrast */}
+            <div className="absolute inset-0 bg-black/40" />
+
+            {/* Optional: Add content like CTA or title here */}
+            {/* <div className="absolute inset-0 flex items-center justify-center">
+              <h1 className="text-white text-4xl md:text-6xl font-bold">The Pinnacle</h1>
+            </div> */}
           </div>
         ))}
       </Slider>

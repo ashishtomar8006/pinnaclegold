@@ -16,7 +16,7 @@ export default function DirectorSection() {
           {/* LEFT: Copy */}
           <div className="space-y-8">
             {/* Label */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-sage-200 bg-white/70 px-4 py-2 text-xs font-semibold tracking-[0.18em] uppercase text-sage-700 shadow-sm">
+            <div className="inline-flex items-center gap-2 text-[#c8ac6e] rounded-full border border-[#c8ac6e] bg-white/70 px-4 py-2 text-xs font-semibold tracking-[0.18em] uppercase text-sage-700 shadow-sm">
               <ArrowRight className="w-4 h-4" />
               <span>From the Director&apos;s Desk</span>
             </div>

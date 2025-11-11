@@ -19,55 +19,55 @@ const values = [
     title: "Integrity First",
     description:
       "We keep promises — to our customers, partners, and each other. Transparency is non-negotiable; trust is our true currency.",
-    icon: <FaBalanceScale className="text-blue-700" />,
-    bg: "from-blue-50 to-blue-100",
-    borderColor: "border-blue-400",
-    textColor: "text-blue-900",
+    icon: <FaBalanceScale className="text-[#c8ac6e]" />,
+    bg: "from-white-50 to-white-100",
+    borderColor: "border-[#c8ac6e]",
+    textColor: "text-[#c8ac6e]",
   },
   {
     title: "Excellence in Every Detail",
     description:
       "From the sparkle of a diamond to the strength of a foundation vetted by IIT Roorkee, we settle for nothing less than perfection.",
-    icon: <FaStar className="text-blue-700" />,
-    bg: "from-blue-50 to-blue-100",
-    borderColor: "border-blue-400",
-    textColor: "text-blue-900",
+    icon: <FaStar className="text-[#c8ac6e]" />,
+    bg: "from-white-50 to-white-100",
+    borderColor: "border-[#c8ac6e]",
+    textColor: "text-[#c8ac6e]",
   },
   {
     title: "Customer Delight, Always",
     description:
       "Every interaction is personal, every concern is ours. We don’t just sell homes or jewellery — we create lifelong relationships.",
-    icon: <FaSmileBeam className="text-blue-700" />,
-    bg: "from-blue-50 to-blue-100",
-    borderColor: "border-blue-400",
-    textColor: "text-blue-900",
+    icon: <FaSmileBeam className="text-[#c8ac6e]" />,
+    bg: "from-white-50 to-white-100",
+    borderColor: "border-[#c8ac6e]",
+    textColor: "text-[#c8ac6e]",
   },
   {
     title: "Innovation with Soul",
     description:
       "We embrace cutting-edge technology and sustainable practices, but never at the cost of warmth, aesthetics, or human connection.",
-    icon: <FaLightbulb className="text-blue-700" />,
-    bg: "from-blue-50 to-blue-100",
-    borderColor: "border-blue-400",
-    textColor: "text-blue-900",
+    icon: <FaLightbulb className="text-[#c8ac6e]" />,
+    bg: "from-white-50 to-white-100",
+    borderColor: "border-[#c8ac6e]",
+    textColor: "text-[#c8ac6e]",
   },
   {
     title: "Legacy over Profit",
     description:
       "Short-term gains never overshadow long-term impact. We build to last, design to inspire, and grow to give back.",
-    icon: <FaLandmark className="text-blue-700" />,
-    bg: "from-blue-50 to-blue-100",
-    borderColor: "border-blue-400",
-    textColor: "text-blue-900",
+    icon: <FaLandmark className="text-[#c8ac6e]" />,
+    bg: "from-white-50 to-white-100",
+    borderColor: "border-[#c8ac6e]",
+    textColor: "text-[#c8ac6e]",
   },
   {
     title: "Respect for People & Planet",
     description:
       "Diversity powers our teams, fairness defines our dealings, and green living is woven into every blueprint.",
-    icon: <FaLeaf className="text-blue-700" />,
-    bg: "from-blue-50 to-blue-100",
-    borderColor: "border-blue-400",
-    textColor: "text-blue-900",
+    icon: <FaLeaf className="text-[#c8ac6e]" />,
+    bg: "from-white-50 to-white-100",
+    borderColor: "border-[#c8ac6e]",
+    textColor: "text-[#c8ac6e]",
   },
 ];
 
@@ -124,13 +124,13 @@ export default function VisionValuesPage() {
       {/* Vision Statement Section */}
       <section className="py-20 px-6 md:px-12 bg-white relative">
         <div className="max-w-5xl mx-auto text-center mb-16">
-          <span className="inline-block bg-gradient-to-r from-blue-600 to-indigo-700 text-white text-sm font-semibold px-4 py-2 rounded-full mb-6">
+          <span className="inline-block bg-gradient-to-r from-[#c8ac6e] to-[#c8ac6e] text-white text-sm font-semibold px-4 py-2 rounded-full mb-6">
             OUR PROMISE TO INDIA
           </span>
           <blockquote className="text-3xl md:text-4xl font-light text-gray-900 leading-relaxed italic mb-8">
             “{visionStatement}”
           </blockquote>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-700 mx-auto rounded-full"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-yellow-600 to-yellow-700 mx-auto rounded-full"></div>
         </div>
 
         <div className="max-w-4xl mx-auto prose prose-lg text-gray-800 leading-relaxed space-y-6">
@@ -143,7 +143,7 @@ export default function VisionValuesPage() {
 
         <div className="mt-16 flex justify-center">
           <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-2xl shadow-lg max-w-md text-center">
-            <div className="text-5xl font-bold text-blue-700 mb-2">2035</div>
+            <div className="text-5xl font-bold text-[#c8ac6e] mb-2">2035</div>
             <div className="text-gray-700 font-medium">Our Defining Horizon</div>
             <div className="mt-3 text-sm text-gray-600">
               20 Million Sq. Ft. | Iconic Skylines | Sustainable Ecosystems
@@ -170,7 +170,7 @@ export default function VisionValuesPage() {
       {/* Values Section */}
       <section className="py-20 px-6 md:px-12 bg-gray-50">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Core Values</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-[#c8ac6e] mb-4">Our Core Values</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             These are not posters on a wall — they are the heartbeat of every decision we make.
           </p>
@@ -196,7 +196,7 @@ export default function VisionValuesPage() {
 
       {/* Closing Banner */}
       <section
-        className="py-20 px-6 md:px-12 bg-gradient-to-r from-blue-900 via-indigo-900 to-purple-900 text-white text-center relative overflow-hidden"
+        className="py-20 px-6 md:px-12 bg-gradient-to-r from-gray-900/90 via-gray-900/95 to-gray-900/90 text-white text-center relative overflow-hidden"
       >
         <div className="absolute inset-0 opacity-10">
           <Image
@@ -207,7 +207,7 @@ export default function VisionValuesPage() {
           />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-extrabold mb-6">
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-6 text-[#c8ac6e]">
             STJ Group – Where Trust Meets Timeless Luxury
           </h2>
           <p className="text-xl md:text-2xl font-light max-w-3xl mx-auto leading-relaxed">

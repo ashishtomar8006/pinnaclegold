@@ -30,10 +30,10 @@ export default function AboutPage() {
         }}
       >
         <div className="max-w-4xl mx-auto text-white">
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-4 tracking-tight leading-tight">
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-4 text-[#c8ac6e] tracking-tight leading-tight">
             The Pinnacle – By STJ Group
           </h1>
-          <h2 className="text-2xl font-medium text-yellow-300 mb-6 tracking-wide uppercase">
+          <h2 className="text-2xl font-medium text-white mb-6 tracking-wide uppercase">
             THE MOST TRUSTED BUILDER OF TRICITY
           </h2>
           <p className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
@@ -72,7 +72,7 @@ export default function AboutPage() {
       <section className="max-w-7xl  mx-auto px-4 sm:px-8 !pb-16 !pt-0 grid md:grid-cols-1 gap-10 items-center">
         <div className="bg-white rounded-3xl overflow-hidden md:flex">
           <div className="md:w-1/2 p-10 flex flex-col justify-center">
-            <h3 className="text-3xl font-bold text-gray-900 mb-6">
+            <h3 className="text-3xl font-bold text-[#c8ac6e] mb-6">
               A Legacy Built on Trust
             </h3>
             <p className="text-lg text-gray-800 mb-5 leading-relaxed">
@@ -115,7 +115,7 @@ export default function AboutPage() {
             ></div>
 
             <div className="md:w-1/2 p-10 flex flex-col justify-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-5 leading-tight">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#c8ac6e] mb-5 leading-tight">
                 The Pinnacle – Where Aspiration Meets Altitude
               </h2>
               <p className="text-lg text-gray-700 mb-4">
@@ -161,7 +161,7 @@ export default function AboutPage() {
 
       {/* Lifestyle Gallery Section */}
       <section className="py-16 px-4 sm:px-8 bg-gray-100">
-        <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">
+        <h3 className="text-3xl font-bold text-center text-[#c8ac6e] mb-12">
           Tricity’s grandest lifestyle destination
         </h3>
         <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-6">
@@ -216,14 +216,20 @@ export default function AboutPage() {
       </section>
 
       {/* Closing Statement with Gradient Background */}
-      <section className="py-16 px-4 sm:px-8">
+      <section className="py-6 px-4 sm:px-8">
         <div
-          className="max-w-4xl mx-auto rounded-3xl p-10 md:p-12 text-center text-white relative overflow-hidden"
+          className="max-w-6xl mx-auto rounded-3xl p-10  md:p-12 text-center text-white relative overflow-hidden"
           style={{
-            background: `linear-gradient(135deg, #1e3a8a, #3b82f6)`,
+            background: `
+    linear-gradient(0deg, rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    linear-gradient(135deg, #1e3a8a, #3b82f6),
+    url('/images/pinnacle-night.jpg')
+  `,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
           }}
         >
-          <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0 opacity-30">
             <Image
               src="/images/hero/banner1.jpg"
               alt="Background texture"
@@ -231,14 +237,14 @@ export default function AboutPage() {
               objectFit="cover"
             />
           </div>
-          <div className="relative z-10">
+          <div className="relative z-10 py-16">
             <h3 className="text-3xl md:text-4xl font-bold mb-6">
               At The Pinnacle, luxury is not an address.
             </h3>
             <p className="text-xl md:text-2xl mb-8 font-light">
               It is a daily celebration of the life you’ve always dreamed of.
             </p>
-            <p className="text-2xl md:text-3xl font-extrabold text-yellow-300">
+            <p className="text-2xl md:text-3xl font-extrabold text-primary">
               The Pinnacle by STJ Group — Rise to the Extraordinary.
             </p>
           </div>

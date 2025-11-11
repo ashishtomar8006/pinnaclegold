@@ -28,7 +28,7 @@ const Footer = () => {
               
               {/* Headline */}
               <div className="space-y-4">
-                <h2 className="text-4xl md:text-5xl font-extrabold leading-tight bg-gradient-to-r from-white via-primary to-white bg-clip-text text-transparent">
+                <h2 className="text-4xl md:text-5xl font-extrabold leading-tight bg-gradient-to-r from-[#c8ac6e] via-primary to-[#c8ac6e] bg-clip-text text-transparent">
                   Begin Your Path to Success
                 </h2>
                 <p className="text-xl text-white/80 max-w-2xl">
@@ -112,7 +112,7 @@ const Footer = () => {
 
             {/* Navigation Columns */}
             <div className="md:col-span-2 col-span-6">
-              <h3 className="font-semibold text-lg mb-5 tracking-wide text-white">Explore</h3>
+              <h3 className="font-semibold text-lg mb-5 tracking-wide text-[#c8ac6e]">Explore</h3>
               <div className="flex flex-col gap-3">
                 {FooterLinks.slice(0, 3).map((item, index) => (
                   <Link
@@ -127,7 +127,7 @@ const Footer = () => {
             </div>
 
             <div className="md:col-span-3 col-span-6">
-              <h3 className="font-semibold text-lg mb-5 tracking-wide text-white">Legal & Support</h3>
+              <h3 className="font-semibold text-lg mb-5 tracking-wide text-[#c8ac6e]">Legal & Support</h3>
               <div className="flex flex-col gap-3">
                 {FooterLinks.slice(3, 6).map((item, index) => (
                   <Link

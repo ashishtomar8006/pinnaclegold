@@ -88,7 +88,7 @@ const ImageSlide: React.FC<{ image: ImageData; isActive: boolean }> = ({ image, 
           className="absolute bottom-0 left-0 right-0 p-8 md:p-16 text-white"
         >
           <div className="max-w-4xl">
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ 
                 opacity: isActive ? 1 : 0,
@@ -101,7 +101,7 @@ const ImageSlide: React.FC<{ image: ImageData; isActive: boolean }> = ({ image, 
               <span className="text-sm font-medium text-blue-400 uppercase tracking-wider">
                 {image.location}
               </span>
-            </motion.div>
+            </motion.div> */}
             
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
