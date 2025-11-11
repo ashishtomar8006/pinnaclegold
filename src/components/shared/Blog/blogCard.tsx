@@ -9,7 +9,7 @@ const BlogCard: FC<{ blog: Blog }> = ({ blog }) => {
     return (
         <Link href={`/blogs/${slug}`} aria-label="blog cover 5xl:h-full 5xl:inline-block" className="gap-4 group">
             <div className="overflow-hidden rounded-2xl flex-shrink-0">
-                <Image
+                {/* <Image
                     src={coverImage!}
                     alt="image"
                     className="transition group-hover:scale-110"
@@ -17,9 +17,21 @@ const BlogCard: FC<{ blog: Blog }> = ({ blog }) => {
                     height={163}
                     style={{ width: "100%", height: "100%" }}
                     unoptimized={true}
-                />
+                /> */}
+
+<video
+              className="w-full h-screen object-cover"
+              src={coverImage!}
+              autoPlay
+              loop
+              muted
+              width={190}
+              height={163}
+              style={{ width: "100%", height: "100%" }}
+              playsInline
+            />
             </div>
-            <div className="flex justify-between items-center">
+            {/* <div className="flex justify-between items-center">
                 <div>
                     <h3 className="mt-2 text-xl font-medium text-dark dark:text-white group-hover:text-primary">
                         {title}
@@ -31,7 +43,7 @@ const BlogCard: FC<{ blog: Blog }> = ({ blog }) => {
                 <div className="py-2.5 px-5 bg-dark/5 rounded-full dark:bg-white/15">
                     <p className="text-sm font-semibold text-dark dark:text-white">{tag}</p>
                 </div>
-            </div>
+            </div> */}
         </Link>
     );
 };

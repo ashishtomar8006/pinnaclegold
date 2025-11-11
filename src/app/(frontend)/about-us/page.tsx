@@ -31,21 +31,26 @@ export default function AboutPage() {
       >
         <div className="max-w-4xl mx-auto text-white">
           <h1 className="text-5xl md:text-6xl font-extrabold mb-4 tracking-tight leading-tight">
-             The Pinnacle – By STJ Group
+            The Pinnacle – By STJ Group
           </h1>
           <h2 className="text-2xl font-medium text-yellow-300 mb-6 tracking-wide uppercase">
             THE MOST TRUSTED BUILDER OF TRICITY
           </h2>
           <p className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-            In the world of real estate, trust and excellence are the cornerstones of every project's success.<br />
-            At THE PINNACLE, these qualities go hand in hand — brought to life by the legacy of STJ Group.
+            In the world of real estate, trust and excellence are the
+            cornerstones of every project's success.
+            <br />
+            At THE PINNACLE, these qualities go hand in hand — brought to life
+            by the legacy of STJ Group.
           </p>
         </div>
       </section>
 
       {/* Impact Stats Section - Animated Cards */}
       <section className="max-w-5xl mx-auto pt-6 px-4 sm:px-8">
-        <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">Our Impact, In Numbers</h3>
+        <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">
+          Our Impact, In Numbers
+        </h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {impactStats.map((item, idx) => (
             <div
@@ -55,62 +60,86 @@ export default function AboutPage() {
               <span className="text-5xl md:text-6xl font-extrabold text-primary mb-3 group-hover:scale-110 transition-transform duration-300">
                 {item.value}
               </span>
-              <span className="text-gray-700 text-lg font-semibold text-center">{item.label}</span>
+              <span className="text-gray-700 text-lg font-semibold text-center">
+                {item.label}
+              </span>
             </div>
           ))}
         </div>
       </section>
 
       {/* Company Legacy with Side Image */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-8 !pb-16 !pt-0 grid md:grid-cols-2 gap-10 items-center">
-        <div>
-          <h3 className="text-3xl font-bold text-gray-900 mb-6">A Legacy Built on Trust</h3>
-          <p className="text-lg text-gray-800 mb-5 leading-relaxed">
-            STJ Group has earned a stellar reputation for impeccable construction and the unwavering delivery of promises. Their indelible mark on the commercial landscape shines through Mohali Citi Centre, setting a new standard for excellence.
-          </p>
-          <p className="text-lg text-gray-700 leading-relaxed mb-5">
-            Today, they embark on a journey to redefine residential living with THE PINNACLE, where luxury, comfort, and sophistication converge to create an unparalleled living experience.
-          </p>
-          <div className="bg-primary-50 border-l-4 border-primary px-6 py-5 rounded-lg text-gray-800 shadow-md">
-            <p className="italic">
-              In 2018, we diversified into real estate with Mohali Citi Centre-1 in Aerocity, Mohali — a project that set new benchmarks in design and delivery. Today, operating across the Tricity region, STJ Group symbolizes uncompromising quality in both jewellery retail and real estate, driven by relationships built on personalized care, transparency, and enduring value.
+      <section className="max-w-7xl  mx-auto px-4 sm:px-8 !pb-16 !pt-0 grid md:grid-cols-1 gap-10 items-center">
+        <div className="bg-white rounded-3xl overflow-hidden md:flex">
+          <div className="md:w-1/2 p-10 flex flex-col justify-center">
+            <h3 className="text-3xl font-bold text-gray-900 mb-6">
+              A Legacy Built on Trust
+            </h3>
+            <p className="text-lg text-gray-800 mb-5 leading-relaxed">
+              STJ Group has earned a stellar reputation for impeccable
+              construction and the unwavering delivery of promises. Their
+              indelible mark on the commercial landscape shines through Mohali
+              Citi Centre, setting a new standard for excellence.
             </p>
+            <p className="text-lg text-gray-700 leading-relaxed mb-5">
+              Today, they embark on a journey to redefine residential living
+              with THE PINNACLE, where luxury, comfort, and sophistication
+              converge to create an unparalleled living experience.
+            </p>
+            <div className="bg-primary-50 border-l-4 border-primary px-6 py-5 rounded-lg text-gray-800 shadow-md">
+              <p className="italic">
+                In 2018, we diversified into real estate with Mohali Citi
+                Centre-1 in Aerocity, Mohali — a project that set new benchmarks
+                in design and delivery. Today, operating across the Tricity
+                region, STJ Group symbolizes uncompromising quality in both
+                jewellery retail and real estate, driven by relationships built
+                on personalized care, transparency, and enduring value.
+              </p>
+            </div>
           </div>
-        </div>
-        <div className="flex justify-center">
-          <Image
-            src="/images/hero/banner1.jpg"
-            alt="Architects Hafeez Contractor & Zafar Chaudhary"
-            width={500}
-            height={400}
-            className="rounded-xl shadow-lg border object-cover"
-          />
+
+          <div
+            className="md:w-1/2 bg-cover bg-center h-96 md:h-auto"
+            style={{ backgroundImage: `url('/images/hero/banner1.jpg')` }}
+          ></div>
         </div>
       </section>
 
       {/* Prestige Statement with Split Background */}
       <section className="pb-6 px-4 sm:px-8 bg-gradient-to-br from-gray-100 via-white to-gray-50">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="bg-white rounded-3xl shadow-2xl overflow-hidden md:flex">
+            <div
+              className="md:w-1/2 bg-cover bg-center h-96 md:h-auto"
+              style={{ backgroundImage: `url('/images/hero/banner1.jpg')` }}
+            ></div>
+
             <div className="md:w-1/2 p-10 flex flex-col justify-center">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-5 leading-tight">
                 The Pinnacle – Where Aspiration Meets Altitude
               </h2>
               <p className="text-lg text-gray-700 mb-4">
-                Rising 35 majestic storeys in Sector 83A, IT City Mohali, The Pinnacle is not just a residence — it is the new definition of prestige in the Tricity region.
+                Rising 35 majestic storeys in Sector 83A, IT City Mohali, The
+                Pinnacle is not just a residence — it is the new definition of
+                prestige in the Tricity region.
               </p>
               <p className="text-lg text-gray-700">
-                Designed by legendary Ar. Hafeez Contractor and enriched with interiors by Zafar Chaudhary, every corner reflects architectural brilliance and refined luxury. From the breathtaking triple-height entrance lobby to expansive sky residences, perfection is in every detail.
+                Designed by legendary Ar. Hafeez Contractor and enriched with
+                interiors by Zafar Chaudhary, every corner reflects
+                architectural brilliance and refined luxury. From the
+                breathtaking triple-height entrance lobby to expansive sky
+                residences, perfection is in every detail.
               </p>
             </div>
-            <div className="md:w-1/2 bg-cover bg-center h-96 md:h-auto" style={{ backgroundImage: `url('/images/hero/banner1.jpg')` }}></div>
           </div>
         </div>
       </section>
 
       {/* Features Grid with Icons/Images */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-8 py-16">
-        <h3 className="text-3xl font-bold text-center text-primary mb-12">Why The Pinnacle is Extraordinary</h3>
+      <section className="max-w-7xl mx-auto px-4 sm:px-8 py-16">
+        <h3 className="text-3xl font-bold text-center text-primary mb-12">
+          Why The Pinnacle is Extraordinary
+        </h3>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, idx) => (
             <div
@@ -118,8 +147,12 @@ export default function AboutPage() {
               className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 border border-gray-100 group"
             >
               <div className="flex items-start gap-4">
-                <span className="text-primary font-bold mt-1 flex-shrink-0">•</span>
-                <p className="text-gray-800 group-hover:text-primary transition-colors duration-300">{feature}</p>
+                <span className="text-primary font-bold mt-1 flex-shrink-0">
+                  •
+                </span>
+                <p className="text-gray-800 group-hover:text-primary transition-colors duration-300">
+                  {feature}
+                </p>
               </div>
             </div>
           ))}
@@ -128,8 +161,10 @@ export default function AboutPage() {
 
       {/* Lifestyle Gallery Section */}
       <section className="py-16 px-4 sm:px-8 bg-gray-100">
-        <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">Tricity’s grandest lifestyle destination</h3>
-        <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
+        <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">
+          Tricity’s grandest lifestyle destination
+        </h3>
+        <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-6">
           <div className="rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
             <Image
               src="/images/hero/banner2.jpg"
@@ -140,7 +175,10 @@ export default function AboutPage() {
             />
             <div className="p-4 bg-white">
               <h4 className="font-bold text-gray-900">Grand Clubhouse</h4>
-              <p className="text-sm text-gray-600">1 lakh sq. ft. clubhouse – the largest and first of its kind in the region              </p>
+              <p className="text-sm text-gray-600">
+                1 lakh sq. ft. clubhouse – the largest and first of its kind in
+                the region{" "}
+              </p>
             </div>
           </div>
           <div className="rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
@@ -153,7 +191,8 @@ export default function AboutPage() {
             />
             <div className="p-4 bg-white">
               <h4 className="font-bold text-gray-900">Sky Pool & Lounge</h4>
-              <p className="text-sm text-gray-600">Infinity-edge sky pool & Sky Walk at 400+ feet
+              <p className="text-sm text-gray-600">
+                Infinity-edge sky pool & Sky Walk at 400+ feet
               </p>
             </div>
           </div>
@@ -167,7 +206,10 @@ export default function AboutPage() {
             />
             <div className="p-4 bg-white">
               <h4 className="font-bold text-gray-900">Unbeatable Location</h4>
-              <p className="text-sm text-gray-600">7-star concierge, private theatres, wellness spa, and celestial lounge</p>
+              <p className="text-sm text-gray-600">
+                7-star concierge, private theatres, wellness spa, and celestial
+                lounge
+              </p>
             </div>
           </div>
         </div>

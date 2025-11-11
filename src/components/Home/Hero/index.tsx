@@ -41,9 +41,9 @@ const Hero: React.FC = () => {
     dots: true,
     infinite: true,
     fade: true,
-    autoplay: false,
-    autoplaySpeed: 15000,
-    speed: 1000,
+    autoplay: true,
+    autoplaySpeed: 5000, // 5 seconds delay between slides
+    speed: 1000, // 1 second fade transition duration
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: true,
@@ -59,7 +59,7 @@ const Hero: React.FC = () => {
           justifyContent: "center",
         }}
       >
-        <ul className="flex space-x-3"> {dots} </ul>
+        <ul className="flex space-x-3">{dots}</ul>
       </div>
     ),
     customPaging: () => (

@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { FaBalanceScale, FaStar, FaSmileBeam, FaLightbulb, FaLandmark, FaLeaf } from "react-icons/fa";
 
 // Vision Content
 const visionStatement = `
@@ -18,7 +19,7 @@ const values = [
     title: "Integrity First",
     description:
       "We keep promises — to our customers, partners, and each other. Transparency is non-negotiable; trust is our true currency.",
-    icon: "⚖️",
+    icon: <FaBalanceScale className="text-blue-700" />,
     bg: "from-blue-50 to-blue-100",
     borderColor: "border-blue-400",
     textColor: "text-blue-900",
@@ -27,46 +28,46 @@ const values = [
     title: "Excellence in Every Detail",
     description:
       "From the sparkle of a diamond to the strength of a foundation vetted by IIT Roorkee, we settle for nothing less than perfection.",
-    icon: "✨",
-    bg: "from-amber-50 to-amber-100",
-    borderColor: "border-amber-400",
-    textColor: "text-amber-900",
+    icon: <FaStar className="text-blue-700" />,
+    bg: "from-blue-50 to-blue-100",
+    borderColor: "border-blue-400",
+    textColor: "text-blue-900",
   },
   {
     title: "Customer Delight, Always",
     description:
       "Every interaction is personal, every concern is ours. We don’t just sell homes or jewellery — we create lifelong relationships.",
-    icon: "❤️",
-    bg: "from-red-50 to-red-100",
-    borderColor: "border-red-400",
-    textColor: "text-red-900",
+    icon: <FaSmileBeam className="text-blue-700" />,
+    bg: "from-blue-50 to-blue-100",
+    borderColor: "border-blue-400",
+    textColor: "text-blue-900",
   },
   {
     title: "Innovation with Soul",
     description:
       "We embrace cutting-edge technology and sustainable practices, but never at the cost of warmth, aesthetics, or human connection.",
-    icon: "🧠",
-    bg: "from-purple-50 to-purple-100",
-    borderColor: "border-purple-400",
-    textColor: "text-purple-900",
+    icon: <FaLightbulb className="text-blue-700" />,
+    bg: "from-blue-50 to-blue-100",
+    borderColor: "border-blue-400",
+    textColor: "text-blue-900",
   },
   {
     title: "Legacy over Profit",
     description:
       "Short-term gains never overshadow long-term impact. We build to last, design to inspire, and grow to give back.",
-    icon: "🏛️",
-    bg: "from-emerald-50 to-emerald-100",
-    borderColor: "border-emerald-400",
-    textColor: "text-emerald-900",
+    icon: <FaLandmark className="text-blue-700" />,
+    bg: "from-blue-50 to-blue-100",
+    borderColor: "border-blue-400",
+    textColor: "text-blue-900",
   },
   {
     title: "Respect for People & Planet",
     description:
       "Diversity powers our teams, fairness defines our dealings, and green living is woven into every blueprint.",
-    icon: "🌍",
-    bg: "from-green-50 to-green-100",
-    borderColor: "border-green-400",
-    textColor: "text-green-900",
+    icon: <FaLeaf className="text-blue-700" />,
+    bg: "from-blue-50 to-blue-100",
+    borderColor: "border-blue-400",
+    textColor: "text-blue-900",
   },
 ];
 
@@ -176,18 +177,20 @@ export default function VisionValuesPage() {
         </div>
 
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {values.map((value, idx) => (
-            <div
-              key={idx}
-              className={`group p-8 rounded-3xl bg-gradient-to-br ${value.bg} border-2 ${value.borderColor} hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 backdrop-blur-sm`}
-            >
-              <div className="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                {value.icon}
-              </div>
-              <h3 className={`text-2xl font-bold mb-3 ${value.textColor}`}>{value.title}</h3>
-              <p className="text-gray-700 leading-relaxed">{value.description}</p>
-            </div>
-          ))}
+        {values.map((value, idx) => (
+        <div
+          key={idx}
+          className={`group p-8 rounded-3xl bg-gradient-to-br ${value.bg} border-2 ${value.borderColor} hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 backdrop-blur-sm`}
+        >
+          <div className="text-6xl mb-6 group-hover:scale-110 transition-transform duration-300">
+            {value.icon}
+          </div>
+          <h3 className={`text-2xl font-bold mb-3 ${value.textColor}`}>
+            {value.title}
+          </h3>
+          <p className="text-gray-700 leading-relaxed">{value.description}</p>
+        </div>
+      ))}
         </div>
       </section>
 
