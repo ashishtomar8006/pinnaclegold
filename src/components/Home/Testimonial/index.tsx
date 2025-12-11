@@ -72,6 +72,7 @@ const Testimonial = () => {
                     <p className="text-primary font-semibold">{item.position}</p>
                   </div>
 
+
                   <div className="w-full lg:w-3/5 flex justify-center">
                     <Image
                       src={item.image}
