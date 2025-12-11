@@ -7,10 +7,10 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizeCss: true,
   },
-  eslint: {
-    ignoreDuringBuilds: true,
+  // eslint: {
+  //   ignoreDuringBuilds: true,
     
-  },
+  // },
 };
 
 export default nextConfig;
