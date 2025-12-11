@@ -52,8 +52,8 @@ const Hero: React.FC = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: true,
-    nextArrow: <NextArrow onClick={() => sliderRef.current?.slickNext()} />, // ✅ Fixed arrow binding
-    prevArrow: <PrevArrow onClick={() => sliderRef.current?.slickPrev()} />, // ✅ Fixed arrow binding
+    // nextArrow: <NextArrow onClick={() => sliderRef.current?.slickNext()} />, // ✅ Fixed arrow binding
+    // prevArrow: <PrevArrow onClick={() => sliderRef.current?.slickPrev()} />, // ✅ Fixed arrow binding
     appendDots: (dots: React.ReactNode) => (
       <div
         style={{

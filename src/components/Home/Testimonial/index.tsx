@@ -42,12 +42,12 @@ const Testimonial = () => {
         />
       </div>
       <div className="container max-w-8xl mx-auto px-5 2xl:px-0 relative z-10">
-        <div>
+        {/* <div>
           <h2 className="lg:text-52 text-40 font-medium text-white flex items-center gap-4 mb-6">
             <Icon icon="ph:house-simple-fill" className="text-2xl text-primary" />   
             The Architect
           </h2>
-        </div>
+        </div> */}
         <Carousel
           setApi={setApi}
           opts={{
@@ -60,12 +60,16 @@ const Testimonial = () => {
                 <div className="lg:flex items-center gap-12">
                   <div className="w-full lg:w-3/5 space-y-4 pr-8">
                     <div>
-                      <Icon icon="ph:house-simple" width={32} height={32} className="text-primary" />
+                  
+                      <h2 className="lg:text-52 text-40 font-medium text-white flex items-center gap-4 mb-6">
+            <Icon icon="ph:house-simple-fill" className="text-2xl text-primary" />   
+            The Architect
+          </h2>
                     </div>
                     <h4 className="text-gray-400 whitespace-pre-line leading-relaxed">{item.review}</h4>
 
-                    <p className="text-primary font-semibold mt-4">{item.name}</p>
-                    <p className="text-primary font-semibold mt-4">{item.position}</p>
+                    <p className="text-primary text-2xl font-semibold mt-4 pb-0 mb-0">{item.name}</p>
+                    <p className="text-primary font-semibold">{item.position}</p>
                   </div>
 
                   <div className="w-full lg:w-3/5 flex justify-center">

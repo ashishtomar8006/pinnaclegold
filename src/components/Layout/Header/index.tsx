@@ -7,9 +7,35 @@ import { useEffect, useRef, useState } from "react";
 import { useTheme } from "next-themes";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import { Download } from "lucide-react";
+
+// New: Verticals dropdown data (simple redirect links)
+const verticals = [
+  {
+    label: "Mohali Citi Centre",
+    href: "/verticals/mohali-citi-centre", // update to actual URL if different
+  },
+  {
+    label: "Genesis Heights",
+    href: "/verticals/genesis-heights",
+  },
+  {
+    label: "Saraf The Jeweller",
+    href: "/verticals/saraf-the-jeweller",
+  },
+  {
+    label: "Sunaar The Jeweller",
+    href: "/verticals/sunaar-the-jeweller",
+  },
+  {
+    label: "Bazzar",
+    href: "/verticals/bazzar",
+  },
+];
 
 const Header: React.FC = () => {
   const [sticky, setSticky] = useState(false);
+  const [isVerticalsOpen, setIsVerticalsOpen] = useState(false);
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [isTowersOpen, setIsTowersOpen] = useState(false); // For sidebar accordion
   const { theme, setTheme } = useTheme();
@@ -22,6 +48,7 @@ const Header: React.FC = () => {
   const closeMenu = () => {
     setNavbarOpen(false);
     setIsTowersOpen(false); // Also close towers when closing entire menu
+    setIsVerticalsOpen(false);
   };
 
   useEffect(() => {
@@ -41,6 +68,7 @@ const Header: React.FC = () => {
       ) {
         setNavbarOpen(false);
         setIsTowersOpen(false);
+        setIsVerticalsOpen(false);
       }
     };
 
@@ -124,6 +152,36 @@ const Header: React.FC = () => {
                     ))}
                   </div>
                 </div>
+
+                {/* Verticals Dropdown on Desktop */}
+                <div className="relative group">
+                  <button
+                    type="button"
+                    className={`text-sm lg:text-base font-medium cursor-pointer px-3 py-2 rounded-md transition-all duration-300 flex items-center gap-1 ${
+                      !isHomepage
+                        ? "text-gray-800 hover:text-primary"
+                        : "text-white hover:text-primary"
+                    }`}
+                    aria-haspopup="true"
+                  >
+                    Verticals
+                    <Icon icon="ph:caret-down" width={16} height={16} />
+                  </button>
+
+                  {/* Desktop Verticals Dropdown Menu */}
+                  <div className="absolute top-full left-0 mt-2 w-56 bg-white border border-gray-200 rounded-lg shadow-xl z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 origin-top">
+                    {verticals.map((vertical, idx) => (
+                      <Link
+                        key={idx}
+                        href={vertical.href}
+                        onClick={closeMenu}
+                        className="block px-4 py-3 text-gray-800 hover:bg-gray-50 hover:text-primary transition-colors text-sm font-medium"
+                      >
+                        {vertical.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
               </div>
             )}
 
@@ -151,6 +209,49 @@ const Header: React.FC = () => {
         </div>
       </header>
 
+      {/* Floating CTA Buttons – Desktop (right side, rotated like screenshot) */}
+      <div className="hidden md:flex fixed right-[20px] bottom-40 -translate-y-1/2 z-40 flex-col gap-4">
+        {/* ENQUIRE NOW – gold */}
+        <Link
+          href="/enquire"
+          onClick={closeMenu}
+          className="origin-right -rotate-90 mb-50 block text-center px-4 py-3 rounded-tl-lg rounded-tr-lg bg-[#c79a3a] text-white text-sm font-semibold tracking-[0.15em] shadow-lg hover:bg-[#b4892f] transition-colors"
+        >
+          ENQUIRE NOW
+        </Link>
+
+        {/* DOWNLOAD BROCHURE – dark grey */}
+        <Link
+          href="/Brochure-minj.pdf"
+          download
+          target="_blank"
+          onClick={closeMenu}
+          className="origin-right -rotate-90 flex gap-2 text-center px-4 py-3 rounded-tl-lg rounded-tr-lg bg-[#4b4f54] text-white text-sm font-semibold tracking-[0.15em] shadow-lg hover:bg-[#3a3e42] transition-colors"
+        >
+          <Download className="rotate-90" /> DOWNLOAD BROCHURE
+        </Link>
+      </div>
+
+      {/* Floating CTA Buttons – Mobile (bottom-right, non-rotated for usability) */}
+      <div className="md:hidden fixed right-4 bottom-4 z-40 flex flex-col gap-2">
+        <Link
+          href="/enquire"
+          onClick={closeMenu}
+          className="px-4 py-2 rounded-full border border-primary bg-white/90 text-primary text-xs font-semibold shadow-lg hover:bg-primary hover:text-white transition-colors"
+        >
+          Enquire Now
+        </Link>
+
+        <Link
+          href="/Brochure-minj.pdf"
+          download
+          target="_blank"
+          onClick={closeMenu}
+          className="px-4 py-2 rounded-full bg-primary text-white text-xs font-semibold shadow-lg hover:bg-primary/90 transition-colors"
+        >
+          <Download /> Download Brochure
+        </Link>
+      </div>
       {/* Overlay for Sidebar */}
       {navbarOpen && (
         <div
@@ -227,7 +328,9 @@ const Header: React.FC = () => {
               {/* Animated Tower Links */}
               <div
                 className={`overflow-hidden transition-all duration-300 ${
-                  isTowersOpen ? "max-h-96 opacity-100 mt-4" : "max-h-0 opacity-0"
+                  isTowersOpen
+                    ? "max-h-96 opacity-100 mt-4"
+                    : "max-h-0 opacity-0"
                 }`}
               >
                 <ul className="space-y-3 pl-2">
@@ -239,6 +342,48 @@ const Header: React.FC = () => {
                         className="block text-white text-xl font-medium hover:text-primary transition-colors"
                       >
                         {tower.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            {/* Verticals Accordion in Sidebar */}
+            <div className="border-t border-gray-700 pt-6">
+              <button
+                type="button"
+                onClick={() => setIsVerticalsOpen((prev) => !prev)}
+                className="flex cursor-pointer items-center justify-between w-full text-white text-2xl font-medium hover:text-primary transition-colors"
+                aria-expanded={isVerticalsOpen}
+              >
+                <span>Verticals</span>
+                <Icon
+                  icon="ph:caret-down"
+                  className={`transition-transform duration-300 ${
+                    isVerticalsOpen ? "rotate-180" : ""
+                  }`}
+                  width={20}
+                  height={20}
+                />
+              </button>
+
+              {/* Animated Verticals Links */}
+              <div
+                className={`overflow-hidden transition-all duration-300 ${
+                  isVerticalsOpen
+                    ? "max-h-96 opacity-100 mt-4"
+                    : "max-h-0 opacity-0"
+                }`}
+              >
+                <ul className="space-y-3 pl-2">
+                  {verticals.map((vertical, idx) => (
+                    <li key={idx}>
+                      <Link
+                        href={vertical.href}
+                        onClick={closeMenu}
+                        className="block text-white text-xl font-medium hover:text-primary transition-colors"
+                      >
+                        {vertical.label}
                       </Link>
                     </li>
                   ))}

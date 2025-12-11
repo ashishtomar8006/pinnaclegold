@@ -10,6 +10,7 @@ import ProjectCounter from '@/components/Home/counter/ProjectCounter'
 import AboutSection from '@/components/Home/aboutus/page'
 import SingleImageScroll from '@/components/Home/motion/SingleImageScroll'
 import DirectorSection from '@/components/Home/director/page'
+import PinnacleGallery from '@/components/Home/gallery'
 
 export default function Home() { 
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <GetInTouch />
       <Testimonial />
       <BlogSmall />
+      <PinnacleGallery />
     </main>
   )
 }
