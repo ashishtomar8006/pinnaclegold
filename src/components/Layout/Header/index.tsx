@@ -8,28 +8,30 @@ import { useTheme } from "next-themes";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { Download } from "lucide-react";
+import EnquireNowModal from "@/components/Layout/Header/EnquireNowModal";
+
 
 // New: Verticals dropdown data (simple redirect links)
 const verticals = [
   {
     label: "Mohali Citi Centre",
-    href: "/verticals/mohali-citi-centre", // update to actual URL if different
+    href: "https://thestjgroup.com", // update to actual URL if different
   },
   {
     label: "Genesis Heights",
-    href: "/verticals/genesis-heights",
+    href: "#",
   },
   {
     label: "Saraf The Jeweller",
-    href: "/verticals/saraf-the-jeweller",
+    href: "https://www.sarafthejeweller.com",
   },
   {
     label: "Sunaar The Jeweller",
-    href: "/verticals/sunaar-the-jeweller",
+    href: "https://sunaarbystj.com",
   },
   {
     label: "Bazzar",
-    href: "/verticals/bazzar",
+    href: "https://thebazaarhypermarket.com",
   },
 ];
 
@@ -37,6 +39,8 @@ const Header: React.FC = () => {
   const [sticky, setSticky] = useState(false);
   const [isVerticalsOpen, setIsVerticalsOpen] = useState(false);
   const [navbarOpen, setNavbarOpen] = useState(false);
+  const [enquireOpen, setEnquireOpen] = useState(false);
+
   const [isTowersOpen, setIsTowersOpen] = useState(false); // For sidebar accordion
   const { theme, setTheme } = useTheme();
   const pathname = usePathname();
@@ -174,6 +178,8 @@ const Header: React.FC = () => {
                       <Link
                         key={idx}
                         href={vertical.href}
+                        rel="noopener noreferrer"
+                        target="_blank"
                         onClick={closeMenu}
                         className="block px-4 py-3 text-gray-800 hover:bg-gray-50 hover:text-primary transition-colors text-sm font-medium"
                       >
@@ -212,13 +218,15 @@ const Header: React.FC = () => {
       {/* Floating CTA Buttons – Desktop (right side, rotated like screenshot) */}
       <div className="hidden md:flex fixed right-[20px] bottom-40 -translate-y-1/2 z-40 flex-col gap-4">
         {/* ENQUIRE NOW – gold */}
-        <Link
-          href="/enquire"
-          onClick={closeMenu}
-          className="origin-right -rotate-90 mb-50 block text-center px-4 py-3 rounded-tl-lg rounded-tr-lg bg-[#c79a3a] text-white text-sm font-semibold tracking-[0.15em] shadow-lg hover:bg-[#b4892f] transition-colors"
+        <button
+        onClick={() => {
+        closeMenu();
+        setEnquireOpen(true);
+      }}
+          className="origin-right -rotate-90 cursor-pointer mb-50 block text-center px-4 py-3 rounded-tl-lg rounded-tr-lg bg-[#c79a3a] text-white text-sm font-semibold tracking-[0.15em] shadow-lg hover:bg-[#b4892f] transition-colors"
         >
           ENQUIRE NOW
-        </Link>
+        </button>
 
         {/* DOWNLOAD BROCHURE – dark grey */}
         <Link
@@ -235,8 +243,11 @@ const Header: React.FC = () => {
       {/* Floating CTA Buttons – Mobile (bottom-right, non-rotated for usability) */}
       <div className="md:hidden fixed right-4 bottom-4 z-40 flex flex-col gap-2">
         <Link
-          href="/enquire"
-          onClick={closeMenu}
+          href="#"
+          onClick={() => {
+            closeMenu();
+            setEnquireOpen(true);
+          }}
           className="px-4 py-2 rounded-full border border-primary bg-white/90 text-primary text-xs font-semibold shadow-lg hover:bg-primary hover:text-white transition-colors"
         >
           Enquire Now
@@ -392,6 +403,9 @@ const Header: React.FC = () => {
             </div>
           </nav>
 
+         
+
+
           {/* Optional: Theme Toggle or Contact CTA at Bottom */}
           <div className="mt-auto pb-10">
             <div className="text-gray-400 text-sm">
@@ -400,6 +414,12 @@ const Header: React.FC = () => {
           </div>
         </div>
       </div>
+
+          <EnquireNowModal
+            open={enquireOpen}
+            onClose={() => setEnquireOpen(false)}
+            verticalOptions={verticals.map(v => ({ label: v.label, value: v.label }))}
+          />
     </>
   );
 };

@@ -11,6 +11,7 @@ import AboutSection from '@/components/Home/aboutus/page'
 import SingleImageScroll from '@/components/Home/motion/SingleImageScroll'
 import DirectorSection from '@/components/Home/director/page'
 import PinnacleGallery from '@/components/Home/gallery'
+import InstagramFeed from '@/components/Home/InstaFeeds'
 
 export default function Home() { 
   return (
@@ -24,6 +25,7 @@ export default function Home() {
       <Testimonial />
       <BlogSmall />
       <PinnacleGallery />
+      <InstagramFeed />
     </main>
   )
 }

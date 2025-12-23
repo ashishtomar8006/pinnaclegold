@@ -9,7 +9,7 @@ import "slick-carousel/slick/slick-theme.css";
 const videos = [
   "/videos/after-enter-button.mp4",
   "/videos/slidervideo2.mp4",
-  "/videos/slidervideo3.mp4",
+  "/videos/video-the-pinnacle.mp4",
 ];
 
 // Custom Arrow Components
