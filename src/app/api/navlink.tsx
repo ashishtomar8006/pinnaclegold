@@ -12,8 +12,8 @@ export const towers = [
 export const navLinks = [
   { label: "Home", href: "/home" },
   { label: "About Us", href: "/about-us" },
-  { label: "Contact Us", href: "/contact-us" },
   { label: "Vision", href: "/vision" },
   { label: "Amenities", href: "/amenities" }, // Fixed typo: "Amnities" → "Amenities"
   { label: "Club", href: "/club" },
+  { label: "Contact Us", href: "/contact-us" },
 ];
