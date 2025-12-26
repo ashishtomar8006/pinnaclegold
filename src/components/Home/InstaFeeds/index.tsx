@@ -10,14 +10,13 @@ type InstagramPost = {
   isVideo?: boolean;
 };
 
-const INSTAGRAM_PROFILE_URL = "https://www.instagram.com/homelandregaliaofficial/";
+const INSTAGRAM_PROFILE_URL = "https://www.instagram.com/thepinnaclebystj/";
 
 const posts: InstagramPost[] = [
   {
     id: "18129831355504221",
-    href: "https://www.instagram.com/reel/DScNXoFEoBG/",
+    href: "https://www.instagram.com/p/DScew2aAVSO/?igsh=cmhvbjBwazg4cHpq",
     image:
-      "https://homelandregalia.com/wp-content/uploads/sb-instagram-feed-images/602467088_18064929605544558_8625401380303105515_nfull.webp",
     alt: "Soft sunlight, quiet corners, and moments to pause. Mornings at Homeland Regalia begin unhurried, where calm, comfort, and elegance set the tone for the day.",
     isVideo: true,
   },
@@ -103,8 +102,8 @@ export default function InstagramFeed() {
               />
             </div>
             <div>
-              <h3 className="text-base font-semibold leading-tight">
-                homelandregaliaofficial
+              <h3 className="text-base font-semibold leading-tight text-gray-900">
+                 The Pinnacle | STJ Group
               </h3>
               <p className="mt-1 text-sm text-gray-600">
                 The Most Powerful Address in Punjab - Reserved for the Exclusive
