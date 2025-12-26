@@ -10,13 +10,14 @@ type InstagramPost = {
   isVideo?: boolean;
 };
 
-const INSTAGRAM_PROFILE_URL = "https://www.instagram.com/thepinnaclebystj/";
+const INSTAGRAM_PROFILE_URL = "https://www.instagram.com/thepinnaclebystj";
 
 const posts: InstagramPost[] = [
   {
     id: "18129831355504221",
     href: "https://www.instagram.com/p/DScew2aAVSO/?igsh=cmhvbjBwazg4cHpq",
     image:
+      "https://scontent.cdninstagram.com/v/t51.82787-15/589329272_17903468493321531_1674518510627905462_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=111&ig_cache_key=Mzc5MTA0MDI4NDY4NzY4NDc1MA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTkyMC5zZHIuQzMifQ%3D%3D&_nc_ohc=RUk3zPhF_oEQ7kNvwF4FPgl&_nc_oc=Adn65VIMv975drkLX2CVHWP5gIgsGYm9-vgTxbvSHoKSvnRkZT1cZcs8O10465FSyEigaZxGP0RpYqZSCR4JPGL9&_nc_ad=z-m&_nc_cid=1174&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=uLCB8JF1nl8ZkBhgVja5oA&oh=00_AflTJLBOC8CwWJa-thh6HXPfe0Gs8egNWabXmTuJ_fJhUQ&oe=6952E935",
     alt: "Soft sunlight, quiet corners, and moments to pause. Mornings at Homeland Regalia begin unhurried, where calm, comfort, and elegance set the tone for the day.",
     isVideo: true,
   },
