@@ -228,7 +228,7 @@ const Header: React.FC = () => {
           ENQUIRE NOW
         </button>
 
-        {/* DOWNLOAD BROCHURE – dark grey */}
+    
         <Link
           href="/Brochure-minj.pdf"
           download
@@ -248,7 +248,7 @@ const Header: React.FC = () => {
             closeMenu();
             setEnquireOpen(true);
           }}
-          className="px-4 py-2 rounded-full border border-primary bg-white/90 text-primary text-xs font-semibold shadow-lg hover:bg-primary hover:text-white transition-colors"
+          className="px-4 py-2 text-center rounded-full border border-primary bg-white/90 text-primary text-xs font-semibold shadow-lg hover:bg-primary hover:text-white transition-colors"
         >
           Enquire Now
         </Link>
@@ -258,7 +258,7 @@ const Header: React.FC = () => {
           download
           target="_blank"
           onClick={closeMenu}
-          className="px-4 py-2 rounded-full bg-primary text-white text-xs font-semibold shadow-lg hover:bg-primary/90 transition-colors"
+          className="px-4 py-2 flex justify-center items-center gap-4 rounded-full bg-primary text-white text-xs font-semibold shadow-lg hover:bg-primary/90 transition-colors"
         >
           <Download /> Download Brochure
         </Link>
