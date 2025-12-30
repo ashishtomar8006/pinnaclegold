@@ -15,30 +15,30 @@ const INSTAGRAM_PROFILE_URL = "https://www.instagram.com/thepinnaclebystj";
 const posts: InstagramPost[] = [
   {
     id: "18129831355504221",
-    href: "https://www.instagram.com/p/DScew2aAVSO/?igsh=cmhvbjBwazg4cHpq",
+    href: "https://www.instagram.com/reel/DSXVlVmgaBa/?igsh=MWx3NXF1b2ozcDlkcA%3D%3D",
     image:
-      "https://scontent.cdninstagram.com/v/t51.82787-15/589329272_17903468493321531_1674518510627905462_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=111&ig_cache_key=Mzc5MTA0MDI4NDY4NzY4NDc1MA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTkyMC5zZHIuQzMifQ%3D%3D&_nc_ohc=RUk3zPhF_oEQ7kNvwF4FPgl&_nc_oc=Adn65VIMv975drkLX2CVHWP5gIgsGYm9-vgTxbvSHoKSvnRkZT1cZcs8O10465FSyEigaZxGP0RpYqZSCR4JPGL9&_nc_ad=z-m&_nc_cid=1174&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=uLCB8JF1nl8ZkBhgVja5oA&oh=00_AflTJLBOC8CwWJa-thh6HXPfe0Gs8egNWabXmTuJ_fJhUQ&oe=6952E935",
+      "https://scontent.cdninstagram.com/v/t51.82787-15/586679568_17903229714321531_1253777437921310329_n.jpg?stp=dst-jpg_e15_tt6&_nc_cat=104&ig_cache_key=Mzc4OTU5MjUzNjI0NzU0MTg1MDE3OTAzMjI5NzExMzIxNTMx.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjcyMHgxMjgwLnNkci5DMyJ9&_nc_ohc=BFPcEArEUa8Q7kNvwHUJXyD&_nc_oc=Adk1eNAdzJMGdB_-Fh_Tczj0IShV3Sd5v111vKhjKj7Jy9nIAdPgW70xeoxjBm7l_aFH4QQ86u8u-J9-TO1KGMQ1&_nc_ad=z-m&_nc_cid=1174&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=sisGLCLCFqULYyLQ7ULBQw&oh=00_AfkbleH-OgUQMMDn23Jhg3paF3pCrvQuEBMhGNq8g7ZfaA&oe=6959A7D5",
     alt: "Soft sunlight, quiet corners, and moments to pause. Mornings at Homeland Regalia begin unhurried, where calm, comfort, and elegance set the tone for the day.",
     isVideo: true,
   },
   {
     id: "18089035277072084",
-    href: "https://www.instagram.com/p/DScNNpZEo-k/",
+    href: "https://www.instagram.com/reel/DSmzhHegcNs/?igsh=MWMyNzZjaWlxYzZzeQ%3D%3D",
     image:
-      "https://homelandregalia.com/wp-content/uploads/sb-instagram-feed-images/601422062_18064929116544558_1754551608607592191_nfull.webp",
+      "https://scontent.cdninstagram.com/v/t51.71878-15/605615164_1582423499838633_6681206256856053701_n.jpg?stp=dst-jpg_e15_tt6&_nc_cat=104&ig_cache_key=Mzc5Mzk0NjMxMjI0OTAzMzU4MA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjY0MHgxMTM2LnNkci5DMyJ9&_nc_ohc=0jDqxOGiybcQ7kNvwGiBkFU&_nc_oc=AdkGp2UYSv66UMRPru7xxM-ureD7b1WfohsuHsxLgbG25sWPbFdy2HCaNka2Q67GfBs&_nc_ad=z-m&_nc_cid=1174&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=WmM9XCA4OSkswF6NLadpLw&oh=00_AfnHF4H0ZFfgBUW72kyT6HzQvGh5e4ebrIi-IAXjdIpbtg&oe=6959ABB5",
     alt: "Sunlit interiors, quiet comfort, and time to simply be. At Homeland Regalia, days unfold gracefully within thoughtfully designed living spaces that feel calm, refined, and deeply personal.",
   },
   {
     id: "18029816363566295",
-    href: "https://www.instagram.com/reel/DScMtfzEgcD/",
+    href: "https://www.instagram.com/reel/DRhLVWJAUAd/?igsh=OWxxNm1jZmpuYnV6&wa_logging_event=video_play_open",
     image:
-      "https://homelandregalia.com/wp-content/uploads/sb-instagram-feed-images/601633233_18064929092544558_2587577196548014813_nfull.webp",
+      "https://scontent.cdninstagram.com/v/t51.82787-15/588706152_17900821137321531_6028295941659972668_n.jpg?stp=dst-jpg_e15_tt6&_nc_cat=102&ig_cache_key=Mzc3NDM0NzgwODEwNzIxNjkyNTE3OTAwODIxMTMxMzIxNTMx.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjI3MDB4NDgwMC5zZHIuQzMifQ%3D%3D&_nc_ohc=p836AkNUSacQ7kNvwFfJ82j&_nc_oc=AdnQ3WuWp4s0FpaYVvlp0z_WTcL6tzgHXQClu72pMYUAmQxJyIZZJWC_ia3aWwDcvOw&_nc_ad=z-m&_nc_cid=1174&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=KSZLTkHaWvmFx26F7EOmpQ&oh=00_Afki4r32DnwQolfRL_24IKJjOU4taUQpSKaIWaL9NyqLww&oe=695984DE",
     alt: "As the day slows, serenity takes over. Evenings at Homeland Regalia unfold in warmth and stillness, where luxury feels personal, and peace feels complete.",
     isVideo: true,
   },
   {
     id: "18072573518595698",
-    href: "https://www.instagram.com/reel/DSXHW3bEoAo/",
+    href: "https://www.instagram.com/reel/DRhLVWJAUAd/?igsh=OWxxNm1jZmpuYnV6&wa_logging_event=video_play_open",
     image:
       "https://homelandregalia.com/wp-content/uploads/sb-instagram-feed-images/599942969_18064732466544558_7374321317976936850_nfull.webp",
     alt: "As the day slows, serenity takes over. Evenings at Homeland Regalia unfold in warmth and stillness, where luxury feels personal, and peace feels complete.",
@@ -46,40 +46,42 @@ const posts: InstagramPost[] = [
   },
   {
     id: "18060603368637397",
-    href: "https://www.instagram.com/p/DR4yz6-kni2/",
+    href: "https://www.instagram.com/reel/DO6C4XdgUjh/?igsh=Y2NjbGNjeHlvd2Ew",
     image:
       "https://homelandregalia.com/wp-content/uploads/sb-instagram-feed-images/589937816_18063573089544558_2095227281789774339_nfull.webp",
     alt: "A symphony of textures. Illuminated marble wall façades whisper light, contrasted by the warmth of wooden details. The spectacular chandelier is the crowning showpiece of this luxurious interior.",
   },
   {
     id: "17998849187700529",
-    href: "https://www.instagram.com/reel/DR4yp-Jkk2N/",
+    href: "instagram.com/p/DRPE-6RE9N4/?igsh=MTV6N2g2b3dyODNlbg==",
     image:
-      "https://homelandregalia.com/wp-content/uploads/sb-instagram-feed-images/591140658_18063572948544558_5808970793931203508_nfull.webp",
+      "https://scontent.cdninstagram.com/v/t51.82787-15/582865984_17900045550321531_7722239185521694625_n.heic?stp=dst-jpg_e35_tt6&_nc_cat=109&ig_cache_key=Mzc2OTI1MzMyODQ4OTUzNDMyOA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjEwODB4MTQ0MC5zZHIuQzMifQ%3D%3D&_nc_ohc=-kASMMbaBIcQ7kNvwE5I9KM&_nc_oc=AdmG-9U4zKNZCnL1QP8xjj7aZXB1VyncUhKMzre3LWF4LU3DZBXzXcKVJKGEWOPAm5QRVovzfKsyvDgOppdY_msp&_nc_ad=z-m&_nc_cid=1174&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=t5gnUdsoZ-BOMc4VhNQ62g&oh=00_AfmKZt7CYo-Vg7IKLJr6FoEYoMaTnvK_CCIMWZg7Jp80NQ&oe=69599812",
     alt: "Grandeur in every detail. Feel the tactile elegance of cool marble paired with rich wood.",
-    isVideo: true,
+    isVideo: false,
   },
   {
     id: "17941181360965822",
-    href: "https://www.instagram.com/p/DR4yabkEooA/",
+    href: "https://www.instagram.com/p/DRmfohwAXIp/?igsh=MTlpbjA1bDF5ZHVleA%3D%3D",
     image:
-      "https://homelandregalia.com/wp-content/uploads/sb-instagram-feed-images/588645029_18063572717544558_3090100003069630102_nfull.webp",
+      "https://scontent.cdninstagram.com/v/t51.82787-15/589906156_17901014328321531_6812801363821963932_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ig_cache_key=Mzc3NTg0NDQ2MjA1NjUzNDU2OQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTkyMC5zZHIuQzMifQ%3D%3D&_nc_ohc=Acsl86fsjggQ7kNvwHZ7c4W&_nc_oc=Adnx7ozBtHzEO5LVUnatX8VXyiuRidlGybOYvg67tdqIWa_ZEEK5HGAUUP7_dtob6-sbW3QlzMTV-20_l-B1mDcv&_nc_ad=z-m&_nc_cid=1174&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=X1zkI9Hplz01B66i5yBtqg&oh=00_Afnvo0a5_8ceMwC0TKVjD002WWI3a7Vf_vZsHiCJ1QpEMA&oe=69598986",
     alt: "Timeless mood created by light and texture. Expansive marble interiors meet comforting wooden details.",
+    isVideo: false,
   },
   {
     id: "17985977156868889",
-    href: "https://www.instagram.com/reel/DRmhYVQj_G3/",
+    href: "https://www.instagram.com/p/DRzTqzfgX-U/?igsh=MWRpN2c4OHVpcnU0bw%3D%3D",
     image:
-      "https://homelandregalia.com/wp-content/uploads/sb-instagram-feed-images/587615751_18062870993544558_762910706927883543_nfull.webp",
+      "https://scontent.cdninstagram.com/v/t51.82787-15/588430376_17901607134321531_4185472481715166070_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=111&ig_cache_key=Mzc3OTQ1MTAxNjY4NTEyNTUyNA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTkyMC5zZHIuQzMifQ%3D%3D&_nc_ohc=FLEFtk25S00Q7kNvwFJZj8V&_nc_oc=Adnd_5dh8QjYQwU8OKa7XSxhqW9wLuTiCrHdOUZQCVi9irwRm7Ov_VYvHcTj0amWdkIsFx4uEt1YjNvxo7GZSVai&_nc_ad=z-m&_nc_cid=1174&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=2AP3AtA5-TTo4c96GFoaQg&oh=00_AflrtN40MsqJkJMzpjDt2795KPlzUdhEqiuDiC3KykdYpA&oe=69599992",
     alt: "Step into a portal of timeless splendour — a glimpse of what awaits within Homeland Regalia’s world of luxury.",
-    isVideo: true,
+    isVideo: false,
   },
   {
     id: "18118824760558627",
-    href: "https://www.instagram.com/p/DRhQq8OkkR6/",
+    href: "https://www.instagram.com/p/DSkK22dgQZr/?igsh=OG9obG1ucDYydmt6",
     image:
-      "https://homelandregalia.com/wp-content/uploads/sb-instagram-feed-images/588372919_1253480736829549_2283060505355750689_nfull.webp",
+      "https://scontent.cdninstagram.com/v/t51.82787-15/602307111_17903822592321531_3299204162438486765_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ig_cache_key=Mzc5MzIwNDUzNTk0NjcwODU4Nw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTkyMC5zZHIuQzMifQ%3D%3D&_nc_ohc=FYrRRX9WAHAQ7kNvwFr2j1k&_nc_oc=AdnlxFU9WeHLz76F65KKiiUSrWCiLl4hUT0axWLR0J5SY7xA4VeQKm0zdgncRFsTxymUcjzWgHM9VdxK1tBrjjuE&_nc_ad=z-m&_nc_cid=1174&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=bwnJe0-ytJMwsPTqjnfosA&oh=00_AfmC4rC620W18O2ZfenAh99SMKfzagd7lxs_MSVAOW5ssw&oe=69599E10",
     alt: "Grandeur begins the moment you arrive — and this is just the beginning.",
+    isVideo: false,
   },
 ];
 
