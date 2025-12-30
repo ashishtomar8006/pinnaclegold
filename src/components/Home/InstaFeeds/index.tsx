@@ -99,7 +99,7 @@ export default function InstagramFeed() {
           >
             <div className="relative h-14 w-14 overflow-hidden rounded-full border border-gray-200">
               <img
-                src="https://homelandregalia.com/wp-content/uploads/sb-instagram-feed-images/homelandregaliaofficial.webp"
+                src="/images/logo/pinnaclenewonelogo.jpg"
                 alt="homelandregaliaofficial"
                 className="h-full w-full object-cover"
               />
