@@ -182,7 +182,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
                   className="group relative px-6 py-2 cursor-pointer border-white text-white font-bold rounded-full text-xl shadow-2xl border overflow-hidden backdrop-blur-sm"
                 >
                   <motion.div
-                    className="absolute inset-0 cursor-pointer bg-gradient-to-r from-blue-600 via-purple-600 to-primary opacity-0 group-hover:opacity-100"
+                    className="absolute inset-0 cursor-pointer bg-[#c79a3a] opacity-80 group-hover:opacity-100"
                     transition={{ duration: 0.4 }}
                   />
 

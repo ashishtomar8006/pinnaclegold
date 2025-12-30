@@ -58,8 +58,7 @@ const BlogSmall: React.FC = () => {
               Updates
             </h2>
             <p className="text-dark/50 dark:text-white/50 text-xm">
-              Learn what's new at Jubilee Clio and discover what's happening
-              behind the scenes to stay updated.
+              Discover what’s new at Pinnacle and stay connected with everything happening behind the scenes.
             </p>
           </div>
           {/* <Link href="/blogs" className='bg-dark dark:bg-white text-white dark:text-dark py-4 px-8 rounded-full hover:bg-primary duration-300' aria-label="Read all blog articles">

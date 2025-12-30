@@ -47,9 +47,9 @@ const Hero: React.FC = () => {
     dots: true,
     infinite: true,
     fade: true,
-    autoplay: true, // ✅ Fixed casing
-    autoplaySpeed: 5000, // 5s between auto slides
-    speed: 1000, // 1s fade transition
+    autoplay: false, 
+    autoplaySpeed: 5000, 
+    speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: true,

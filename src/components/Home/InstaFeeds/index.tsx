@@ -106,13 +106,13 @@ export default function InstagramFeed() {
             </div>
             <div>
               <h3 className="text-base font-semibold leading-tight text-gray-900">
-                 The Pinnacle | STJ Group
+                The Pinnacle | STJ Group
               </h3>
               <p className="mt-1 text-sm text-gray-600">
-                The Most Powerful Address in Punjab - Reserved for the Exclusive
-                Few.
+                Where contemporary design meets timeless elegance. In The Heart
+                Of Aero City, Mohali.
                 <br />
-                A Venture by SA Global
+                Crafted By : Hafeez Contractor | Zafar
               </p>
             </div>
           </a>
@@ -123,11 +123,7 @@ export default function InstagramFeed() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full bg-[#d1b371] px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-[#ddb96d]"
           >
-            <svg
-              className="h-4 w-4"
-              aria-hidden="true"
-              viewBox="0 0 448 512"
-            >
+            <svg className="h-4 w-4" aria-hidden="true" viewBox="0 0 448 512">
               <path
                 fill="currentColor"
                 d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8z"
