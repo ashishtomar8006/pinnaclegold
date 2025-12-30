@@ -193,7 +193,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
                       transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
                       className="cursor-pointer"
                     >
-                      Exprience Website
+                      Experience Website
                     </motion.span>
                     <motion.div
                       animate={{ x: [0, 8, 0], rotate: [0, 15, 0] }}
