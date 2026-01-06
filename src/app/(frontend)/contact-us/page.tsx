@@ -8,9 +8,11 @@ export const metadata: Metadata = {
 
 export default function ContactUs() {
   return (
-    <div className="container max-w-8xl mx-auto px-5 2xl:px-0 pt-32 md:pt-44 pb-14 md:pb-28">
+ <div className="bg-white min-h-screen pt-24 text-black">
+      {/* Hero Banner with Background Image */}
+    
       <div className="mb-16">
-        <div className="flex gap-2.5 items-center justify-center mb-3">
+        {/* <div className="flex gap-2.5 items-center justify-center mb-3">
           <span>
             <Icon
               icon={"ph:house-simple-fill"}
@@ -19,22 +21,22 @@ export default function ContactUs() {
               className="text-primary"
             />
           </span>
-          <p className="text-base font-semibold text-badge dark:text-white/90">
+          <p className="text-base font-semibold text-black/60">
             Contact us
           </p>
-        </div>
+        </div> */}
         <div className="text-center">
-          <h3 className="text-4xl sm:text-52 font-medium tracking-tighter text-black dark:text-white mb-3 leading-10 sm:leading-14">
+          <h3 className="text-4xl sm:text-52 font-medium tracking-tighter text-[#c8ac6e] leading-10 sm:leading-14">
             Have questions? ready to help!
           </h3>
-          <p className="text-xm font-normal tracking-tight text-black/50 dark:text-white/50 leading-6">
+          <p className="text-xm font-normal pt-6 tracking-tight text-[#c8ac6e] leading-6">
             Looking for your dream home or ready to sell? Our expert team offers
             personalized guidance and market expertise tailored to you.
           </p>
         </div>
       </div>
       {/* form */}
-      <div className="border border-black/10 dark:border-white/10 rounded-2xl p-4 shadow-xl dark:shadow-white/10">
+      <div className="border border-black/10 rounded-2xl p-4 shadow-xl dark:shadow-white/10">
         <div className="flex flex-col lg:flex-row lg:items-center gap-12">
           <div className="relative w-fit">
             <Image
@@ -109,7 +111,7 @@ export default function ContactUs() {
                     autoComplete="username"
                     placeholder="Name*"
                     required
-                    className="px-6 py-3.5 border border-black/10 dark:border-white/10 rounded-full outline-primary focus:outline w-full"
+                    className="px-6 py-3.5 border border-black/10 rounded-full outline-primary focus:outline w-full"
                   />
                   <input
                     type="number"
@@ -118,7 +120,7 @@ export default function ContactUs() {
                     autoComplete="mobile"
                     placeholder="Phone number*"
                     required
-                    className="px-6 py-3.5 border border-black/10 dark:border-white/10 rounded-full outline-primary focus:outline w-full"
+                    className="px-6 py-3.5 border border-black/10 rounded-full outline-primary focus:outline w-full"
                   />
                 </div>
                 <input
@@ -128,7 +130,7 @@ export default function ContactUs() {
                   autoComplete="email"
                   placeholder="Email address*"
                   required
-                  className="px-6 py-3.5 border border-black/10 dark:border-white/10 rounded-full outline-primary focus:outline"
+                  className="px-6 py-3.5 border border-black/10 rounded-full outline-primary focus:outline"
                 />
                 <textarea
                   rows={8}
@@ -137,7 +139,7 @@ export default function ContactUs() {
                   id="message"
                   placeholder="Write here your message"
                   required
-                  className="px-6 py-3.5 border border-black/10 dark:border-white/10 rounded-2xl outline-primary focus:outline"
+                  className="px-6 py-3.5 border border-black/10 rounded-2xl outline-primary focus:outline"
                 ></textarea>
                 <button className="px-8 py-4 rounded-full bg-primary text-white text-base font-semibold w-full mobile:w-fit hover:cursor-pointer hover:bg-dark duration-300">
                   Send message
@@ -147,6 +149,9 @@ export default function ContactUs() {
           </div>
         </div>
       </div>
+      
     </div>
+ 
+    
   );
 }

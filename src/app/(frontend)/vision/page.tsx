@@ -1,6 +1,14 @@
+"use client";
 import React from "react";
 import Image from "next/image";
-import { FaBalanceScale, FaStar, FaSmileBeam, FaLightbulb, FaLandmark, FaLeaf } from "react-icons/fa";
+import {
+  FaBalanceScale,
+  FaStar,
+  FaSmileBeam,
+  FaLightbulb,
+  FaLandmark,
+  FaLeaf,
+} from "react-icons/fa";
 
 // Vision Content
 const visionStatement = `
@@ -72,20 +80,18 @@ const values = [
 ];
 
 export default function VisionValuesPage() {
+  const [isClient, setIsClient] = React.useState(false);
+
+  React.useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) {
+    return null; // Prevents SSR issues
+  }
   return (
     <div className="bg-gray-50 pt-24">
-      {/* Hero Section */}
-      {/* <section
-        className="relative h-screen flex items-center justify-center text-white overflow-hidden"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('/images/hero/banner1.jpg')`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      > */}
-
-
-<section
+      <section
         className="relative bg-cover bg-center py-26 px-4 sm:px-8 text-center"
         style={{
           backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('/images/hero/banner1.jpg')`,
@@ -99,8 +105,10 @@ export default function VisionValuesPage() {
           <p className="text-xl md:text-2xl text-white mb-10 font-light max-w-3xl mx-auto leading-relaxed">
             Crafting Tomorrow’s Legends — One Legacy at a Time
           </p>
-          <div className="inline-block bg-white bg-opacity-10 backdrop-blur-sm rounded-full px-6 py-3 border border-white">
-            <span className="text-lg font-medium">2035 | 20M Sq. Ft. | India’s Gold Standard</span>
+          <div className="inline-block bg-[#c8ac6e] bg-opacity-10 backdrop-blur-sm rounded-full px-6 py-3 border border-white">
+            <span className="text-lg font-medium">
+              2035 | 20M Sq. Ft. | India’s Gold Standard
+            </span>
           </div>
         </div>
         <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
@@ -144,7 +152,9 @@ export default function VisionValuesPage() {
         <div className="mt-16 flex justify-center">
           <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-2xl shadow-lg max-w-md text-center">
             <div className="text-5xl font-bold text-[#c8ac6e] mb-2">2035</div>
-            <div className="text-gray-700 font-medium">Our Defining Horizon</div>
+            <div className="text-gray-700 font-medium">
+              Our Defining Horizon
+            </div>
             <div className="mt-3 text-sm text-gray-600">
               20 Million Sq. Ft. | Iconic Skylines | Sustainable Ecosystems
             </div>
@@ -170,34 +180,37 @@ export default function VisionValuesPage() {
       {/* Values Section */}
       <section className="py-20 px-6 md:px-12 bg-gray-50">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#c8ac6e] mb-4">Our Core Values</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-[#c8ac6e] mb-4">
+            Our Core Values
+          </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            These are not posters on a wall — they are the heartbeat of every decision we make.
+            These are not posters on a wall — they are the heartbeat of every
+            decision we make.
           </p>
         </div>
 
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {values.map((value, idx) => (
-        <div
-          key={idx}
-          className={`group p-8 rounded-3xl bg-gradient-to-br ${value.bg} border-2 ${value.borderColor} hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 backdrop-blur-sm`}
-        >
-          <div className="text-6xl mb-6 group-hover:scale-110 transition-transform duration-300">
-            {value.icon}
-          </div>
-          <h3 className={`text-2xl font-bold mb-3 ${value.textColor}`}>
-            {value.title}
-          </h3>
-          <p className="text-gray-700 leading-relaxed">{value.description}</p>
-        </div>
-      ))}
+          {values.map((value, idx) => (
+            <div
+              key={idx}
+              className={`group p-8 rounded-3xl bg-gradient-to-br ${value.bg} border-2 ${value.borderColor} hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 backdrop-blur-sm`}
+            >
+              <div className="text-6xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                {value.icon}
+              </div>
+              <h3 className={`text-2xl font-bold mb-3 ${value.textColor}`}>
+                {value.title}
+              </h3>
+              <p className="text-gray-700 leading-relaxed">
+                {value.description}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
 
       {/* Closing Banner */}
-      <section
-        className="py-20 px-6 md:px-12 bg-gradient-to-r from-gray-900/90 via-gray-900/95 to-gray-900/90 text-white text-center relative overflow-hidden"
-      >
+      <section className="py-20 px-6 md:px-12 bg-gradient-to-r from-gray-900/90 via-gray-900/95 to-gray-900/90 text-white text-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <Image
             src="/images/hero/banner1.jpg"
@@ -211,7 +224,8 @@ export default function VisionValuesPage() {
             STJ Group – Where Trust Meets Timeless Luxury
           </h2>
           <p className="text-xl md:text-2xl font-light max-w-3xl mx-auto leading-relaxed">
-            We don’t follow trends. We set benchmarks. We don’t chase growth. We cultivate legacies.
+            We don’t follow trends. We set benchmarks. We don’t chase growth. We
+            cultivate legacies.
           </p>
           <div className="mt-10 inline-block border-2 border-white px-8 py-4 rounded-full hover:bg-white hover:text-indigo-900 transition-colors duration-300 cursor-pointer">
             <span className="font-semibold text-lg">Explore Our Projects</span>
