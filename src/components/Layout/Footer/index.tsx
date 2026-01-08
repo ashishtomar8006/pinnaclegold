@@ -2,8 +2,32 @@
 import Link from "next/link";
 import { Icon } from "@iconify/react";
 import { FooterLinks } from "@/app/api/footerlinks";
+import { navLinks, towers } from "@/app/api/navlink";
 
 const Footer = () => {
+
+  const verticals = [
+  {
+    label: "Mohali Citi Centre",
+    href: "https://thestjgroup.com", // update to actual URL if different
+  },
+  {
+    label: "Genesis Heights",
+    href: "#",
+  },
+  {
+    label: "Saraf The Jeweller",
+    href: "https://www.sarafthejeweller.com",
+  },
+  {
+    label: "Sunaar The Jeweller",
+    href: "https://sunaarbystj.com",
+  },
+  {
+    label: "Bazzar",
+    href: "https://thebazaarhypermarket.com",
+  },
+];
   return (
     <footer className="relative z-10 bg-gradient-to-b from-gray-900 via-gray-800 to-black text-white overflow-hidden">
       {/* Subtle background pattern */}
@@ -36,16 +60,6 @@ const Footer = () => {
                 </p>
               </div>
 
-              {/* CTA Button */}
-              {/* <Link
-                href="/contactus"
-                className="inline-flex items-center gap-3 bg-gradient-to-r from-primary to-secondary px-8 py-4 rounded-full text-white font-semibold text-lg hover:shadow-lg hover:scale-105 active:scale-95 transition-all duration-300 w-max group"
-              >
-                Get In Touch
-                <Icon icon="ph:arrow-right-bold" className="group-hover:translate-x-1 transition-transform" width={20} height={20} />
-              </Link> */}
-
-              {/* Newsletter Form */}
               <div className="max-w-md">
                 <form className="relative" onSubmit={(e) => e.preventDefault()}>
                   <input
@@ -111,10 +125,11 @@ const Footer = () => {
             </div>
 
             {/* Navigation Columns */}
-            <div className="md:col-span-2 col-span-6">
+           <div className="flex justify-between md:col-span-5 col-span-12 flex-wrap gap-8">
+             <div className="md:col-span-2 col-span-6 ">
               <h3 className="font-semibold text-lg mb-5 tracking-wide text-[#c8ac6e]">Explore</h3>
               <div className="flex flex-col gap-3">
-                {FooterLinks.slice(0, 3).map((item, index) => (
+                {FooterLinks.slice(0, 6).map((item, index) => (
                   <Link
                     key={index}
                     href={item.href}
@@ -126,20 +141,46 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="md:col-span-3 col-span-6">
-              <h3 className="font-semibold text-lg mb-5 tracking-wide text-[#c8ac6e]">Legal & Support</h3>
+            <div className="md:col-span-1 col-span-6">
+              <h3 className="font-semibold text-lg mb-5 tracking-wide text-[#c8ac6e]">
+                Towers
+              </h3>
               <div className="flex flex-col gap-3">
-                {FooterLinks.slice(3, 6).map((item, index) => (
-                  <Link
-                    key={index}
-                    href={item.href}
-                    className="text-white/70 text-sm hover:text-white hover:translate-x-1 transition-all duration-200 font-medium relative pl-1 before:content-[''] before:absolute before:left-0 before:top-1/2 before:h-1 before:w-0 before:bg-primary before:rounded-full before:transition-all before:duration-300 hover:before:w-3"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
+                <ul className="space-y-3 pl-2">
+                  {towers.map((tower, idx) => (
+                    <li key={idx}>
+                      <Link
+                        href={tower.href}
+                        className="text-white/70 text-sm hover:text-white capitalize hover:translate-x-1 transition-all duration-200 font-medium relative pl-1 before:content-[''] before:absolute  before:left-0 before:top-1/2 before:h-1 before:w-0 before:bg-primary before:rounded-full before:transition-all before:duration-300 hover:before:w-3"
+                      >
+                        {tower.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
+            
+              <div className="md:col-span-2 col-span-6">
+              <h3 className="font-semibold text-lg mb-5 tracking-wide text-[#c8ac6e]">
+                Verticals
+              </h3>
+              <div className="flex flex-col gap-3">
+                <ul className="space-y-3 pl-2">
+                  {verticals.map((tower, idx) => (
+                    <li key={idx}>
+                      <Link
+                        href={tower.href}
+                        className="text-white/70 text-sm hover:text-white capitalize hover:translate-x-1 transition-all duration-200 font-medium relative pl-1 before:content-[''] before:absolute  before:left-0 before:top-1/2 before:h-1 before:w-0 before:bg-primary before:rounded-full before:transition-all before:duration-300 hover:before:w-3"
+                      >
+                        {tower.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+           </div>
           </div>
         </div>
 

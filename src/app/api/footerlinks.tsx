@@ -1,10 +1,10 @@
 import { footerlinks } from "@/types/footerlinks"
 
 export const FooterLinks: footerlinks[] = [
-    { label: 'About Us', href: '/aboutus' },
-    { label: 'Contact Us', href: '/contactus' },
+    { label: 'About Us', href: '/about-us' },
+    { label: 'Contact Us', href: '/contact-us' },
     { label: 'Vision', href: '/vision' },
-    { label: 'Amnities', href: '/amnities' },
-    { label: 'Club', href: '/club' },
+    { label: 'Amenities', href: '#' },
+    { label: 'Club', href: '#' },
     { label: 'Tower', href: '/tower' },
 ]
