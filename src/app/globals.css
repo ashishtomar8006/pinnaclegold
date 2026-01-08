@@ -70,6 +70,7 @@ html {
   /* Firefox */
 }
 
+
 /* Optional: Fade out nav links on scroll */
 .nav-links-container {
   transition: opacity 0.3s ease, transform 0.3s ease;

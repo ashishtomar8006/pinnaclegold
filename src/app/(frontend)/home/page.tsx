@@ -12,8 +12,9 @@ import SingleImageScroll from '@/components/Home/motion/SingleImageScroll'
 import DirectorSection from '@/components/Home/director/page'
 import PinnacleGallery from '@/components/Home/gallery'
 import InstagramFeed from '@/components/Home/InstaFeeds'
+import WhatsAppFloat from "@/components/whatsapp/WhatsAppFloat";
 
-export default function Home() { 
+export default function Home() {
   return (
     <main>
       <Hero />
@@ -26,6 +27,7 @@ export default function Home() {
       <BlogSmall />
       <PinnacleGallery />
       <InstagramFeed />
+      <WhatsAppFloat />
     </main>
   )
 }

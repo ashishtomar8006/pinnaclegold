@@ -9,7 +9,7 @@ import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { Download } from "lucide-react";
 import EnquireNowModal from "@/components/Layout/Header/EnquireNowModal";
-
+import PopupImageModal from "@/components/ui/PopupImageModal";
 
 // New: Verticals dropdown data (simple redirect links)
 const verticals = [
@@ -40,6 +40,7 @@ const Header: React.FC = () => {
   const [isVerticalsOpen, setIsVerticalsOpen] = useState(false);
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [enquireOpen, setEnquireOpen] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
 
   const [isTowersOpen, setIsTowersOpen] = useState(false); // For sidebar accordion
   const { theme, setTheme } = useTheme();
@@ -83,6 +84,10 @@ const Header: React.FC = () => {
       window.removeEventListener("scroll", handleScroll);
       document.removeEventListener("mousedown", handleClickOutside);
     };
+  }, []);
+
+  useEffect(() => {
+    setShowPopup(true);
   }, []);
 
   return (
@@ -214,21 +219,21 @@ const Header: React.FC = () => {
           </nav>
         </div>
       </header>
+      <PopupImageModal open={showPopup} onClose={() => setShowPopup(false)} />
 
       {/* Floating CTA Buttons – Desktop (right side, rotated like screenshot) */}
       <div className="hidden md:flex fixed right-[20px] bottom-40 -translate-y-1/2 z-40 flex-col gap-4">
         {/* ENQUIRE NOW – gold */}
         <button
-        onClick={() => {
-        closeMenu();
-        setEnquireOpen(true);
-      }}
+          onClick={() => {
+            closeMenu();
+            setEnquireOpen(true);
+          }}
           className="origin-right -rotate-90 cursor-pointer mb-50 block text-center px-4 py-3 rounded-tl-lg rounded-tr-lg bg-[#c79a3a] text-white text-sm font-semibold tracking-[0.15em] shadow-lg hover:bg-[#b4892f] transition-colors"
         >
           ENQUIRE NOW
         </button>
 
-    
         <Link
           href="/Brochure-minj.pdf"
           download
@@ -403,9 +408,6 @@ const Header: React.FC = () => {
             </div>
           </nav>
 
-         
-
-
           {/* Optional: Theme Toggle or Contact CTA at Bottom */}
           <div className="mt-auto pb-10">
             <div className="text-gray-400 text-sm">
@@ -415,11 +417,14 @@ const Header: React.FC = () => {
         </div>
       </div>
 
-          <EnquireNowModal
-            open={enquireOpen}
-            onClose={() => setEnquireOpen(false)}
-            verticalOptions={verticals.map(v => ({ label: v.label, value: v.label }))}
-          />
+      <EnquireNowModal
+        open={enquireOpen}
+        onClose={() => setEnquireOpen(false)}
+        verticalOptions={verticals.map((v) => ({
+          label: v.label,
+          value: v.label,
+        }))}
+      />
     </>
   );
 };
