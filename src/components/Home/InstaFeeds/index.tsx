@@ -46,9 +46,9 @@ const posts: InstagramPost[] = [
   },
   {
     id: "18060603368637397",
-    href: "https://www.instagram.com/reel/DO6C4XdgUjh/?igsh=Y2NjbGNjeHlvd2Ew",
+    href: "https://www.instagram.com/thepinnaclebystj/p/DTIMMniAYp_/",
     image:
-      "/images/instafeed/instafeed5.webp",
+      "/images/instafeed/instafeed10.jpg",
     alt: "A symphony of textures. Illuminated marble wall façades whisper light, contrasted by the warmth of wooden details. The spectacular chandelier is the crowning showpiece of this luxurious interior.",
   },
   {
