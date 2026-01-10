@@ -246,7 +246,7 @@ const Header: React.FC = () => {
       </div>
 
       {/* Floating CTA Buttons – Mobile (bottom-right, non-rotated for usability) */}
-      <div className="md:hidden fixed right-4 bottom-4 z-40 flex flex-col gap-2">
+      <div className="fixed right-4 bottom-[100px] z-40 flex flex-col gap-2 sm:right-8 sm:bottom-6 md:hidden">
         <Link
           href="#"
           onClick={() => {
