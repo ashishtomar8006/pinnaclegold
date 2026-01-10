@@ -65,10 +65,10 @@ export default function ContactUs() {
                   </p>
                 </div>
               </Link>
-              <Link href="mailto:thepinnacle@thestjgroup.com" className="w-fit">
+              <Link href="mailto:sales@thepinnacle.live" className="w-fit">
                 <div className="flex items-center gap-4 group w-fit">
                   <Icon icon={"ph:envelope-simple"} width={32} height={32} />
-                  thepinnacle@thestjgroup.com
+                  sales@thepinnacle.live
                 </div>
               </Link>
               <div className="flex items-center gap-4">

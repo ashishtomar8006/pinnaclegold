@@ -108,11 +108,11 @@ const Footer = () => {
                 <div className="h-8 w-px bg-white/20"></div>
 
                 <Link
-                  href="mailto:thepinnacle@thestjgroup.com"
+                  href="mailto:sales@thepinnacle.live"
                   className="text-white/80 hover:text-primary transition-colors flex items-center gap-2 group"
                 >
                   <Icon icon="ph:envelope-simple-fill" className="text-primary group-hover:scale-110 transition-transform" width={20} height={20} />
-                  thepinnacle@thestjgroup.com
+                  sales@thepinnacle.live
                 </Link>
 
                 <div className="h-8 w-px bg-white/20"></div>
