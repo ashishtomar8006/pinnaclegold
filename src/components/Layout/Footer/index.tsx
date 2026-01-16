@@ -152,6 +152,30 @@ const Footer = () => {
                         {item.label}
                       </Link>
                     ))}
+
+                    <Link
+                   
+                        href={"/privacy-policy"}
+                        className="relative pl-1 text-sm font-medium text-white/70 transition-all duration-200
+                                   hover:text-white hover:translate-x-1
+                                   before:absolute before:left-0 before:top-1/2 before:h-1 before:w-0 before:-translate-y-1/2
+                                   before:rounded-full before:bg-primary before:transition-all before:duration-300
+                                   hover:before:w-3"
+                      >
+                        Privacy Policy
+                      </Link>
+
+                        <Link
+                   
+                        href={"/terms-and-conditions"}
+                        className="relative pl-1 text-sm font-medium text-white/70 transition-all duration-200
+                                   hover:text-white hover:translate-x-1
+                                   before:absolute before:left-0 before:top-1/2 before:h-1 before:w-0 before:-translate-y-1/2
+                                   before:rounded-full before:bg-primary before:transition-all before:duration-300
+                                   hover:before:w-3"
+                      >
+                        Terms & Conditions
+                      </Link>
                   </div>
                 </div>
 
