@@ -13,7 +13,8 @@ export const navLinks = [
   { label: "Home", href: "/home" },
   { label: "About Us", href: "/about-us" },
   { label: "Vision", href: "/vision" },
-  { label: "Amenities", href: "#" }, // Fixed typo: "Amnities" → "Amenities"
-  { label: "Club", href: "#" },
+  { label: "Amenities", href: "/landscape" },
+  { label: "Club", href: "/amenities" },
+  // { label: "Features of Projects", href: "/features" },
   { label: "Contact Us", href: "/contact-us" },
 ];
