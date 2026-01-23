@@ -44,7 +44,7 @@ export async function POST(req: Request) {
      await transporter.sendMail({
       from: `"${process.env.MAIL_FROM_NAME}" <${process.env.MAIL_FROM_ADDRESS}>`,
       // to: emailRaw,
-      to: "ashishtomar.liangtuang@gmail.com",
+      to: "sales@thepinnacle.live",
       subject,
       text: text,
     });
