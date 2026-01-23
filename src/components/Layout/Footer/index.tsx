@@ -4,8 +4,17 @@ import Link from "next/link";
 import { Icon } from "@iconify/react";
 import { FooterLinks } from "@/app/api/footerlinks";
 import { towers } from "@/app/api/navlink";
+import { useState } from "react";
 
 const Footer = () => {
+
+  
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">(
+    "idle"
+  );
+  const [message, setMessage] = useState("");
+  
   const verticals = [
     { label: "Mohali Citi Centre", href: "https://thestjgroup.com" },
     { label: "Genesis Heights", href: "#" },
@@ -13,6 +22,38 @@ const Footer = () => {
     { label: "Sunaar The Jeweller", href: "https://sunaarbystj.com" },
     { label: "Bazzar", href: "https://thebazaarhypermarket.com" },
   ];
+
+
+
+  async function onSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setStatus("loading");
+    setMessage("");
+
+    try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await res.json().catch(() => ({}));
+
+      if (!res.ok) {
+        setStatus("error");
+        setMessage(data?.message || "Something went wrong. Please try again.");
+        return;
+      }
+
+      setStatus("success");
+      setMessage(data?.message || "Subscribed! Please check your email.");
+      setEmail("");
+    } catch {
+      setStatus("error");
+      setMessage("Network error. Please try again.");
+    }
+  }
+
 
   return (
     <footer className="relative z-10 overflow-hidden bg-gradient-to-b from-gray-900 via-gray-800 to-black text-white">
@@ -46,7 +87,7 @@ const Footer = () => {
 
               {/* Newsletter */}
               <div className="w-full max-w-md">
-                <form className="relative" onSubmit={(e) => e.preventDefault()}>
+                {/* <form className="relative" onSubmit={(e) => e.preventDefault()}>
                   <input
                     type="email"
                     placeholder=" "
@@ -75,7 +116,60 @@ const Footer = () => {
                       height={20}
                     />
                   </button>
-                </form>
+                </form> */}
+                 <form className="relative" onSubmit={onSubmit}>
+      <input
+        type="email"
+        placeholder=" "
+        className="peer w-full rounded-full border border-white/10 bg-white/5 px-5 py-4 text-white backdrop-blur-sm placeholder-transparent transition-all
+                   focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+        required
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        disabled={status === "loading"}
+        aria-describedby="subscribe-status"
+      />
+
+      <label
+        className="pointer-events-none absolute left-5 top-[30px] -translate-y-1/2 text-sm text-white/60 transition-all
+                   peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm
+                   peer-focus:top-1 peer-focus:text-xs peer-focus:text-primary"
+      >
+        Enter your email address
+      </label>
+
+      <button
+        type="submit"
+        className="absolute right-1 top-[28px] -translate-y-1/2 rounded-full bg-white px-5 py-2.5 font-semibold text-dark
+                   shadow-md transition-all duration-300 hover:bg-primary hover:text-white hover:shadow-lg
+                   disabled:opacity-60 disabled:cursor-not-allowed sm:px-6"
+        aria-label="Subscribe"
+        disabled={status === "loading" || !email}
+      >
+        <span className="hidden sm:inline">
+          {status === "loading" ? "Sending..." : "Subscribe"}
+        </span>
+        <Icon
+          icon={status === "loading" ? "eos-icons:loading" : "ph:paper-plane-tilt-fill"}
+          className="sm:hidden"
+          width={20}
+          height={20}
+        />
+      </button>
+
+      <p
+        id="subscribe-status"
+        className={`mt-3 text-sm ${
+          status === "success"
+            ? "text-green-300"
+            : status === "error"
+            ? "text-red-300"
+            : "text-white/60"
+        }`}
+      >
+        {message || (status === "idle" ? "" : "")}
+      </p>
+    </form>
               </div>
 
               {/* Social & Contact */}
