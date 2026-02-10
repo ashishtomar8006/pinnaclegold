@@ -21,7 +21,7 @@ export default function Home() {
       <AboutSection />
       <DirectorSection />
       <SingleImageScroll />
-      <ProjectCounter/>
+      {/* <ProjectCounter/> */}
       <GetInTouch />
       <Testimonial />
       <BlogSmall />
