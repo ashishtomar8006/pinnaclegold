@@ -392,7 +392,10 @@ const Header: React.FC = () => {
                 }`}
               >
                 <ul className="space-y-3 pl-2">
-                  {verticals.map((vertical, idx) => (
+                  {[...verticals,{
+                    href:"#",
+                    label:"FORUM By STJ GROUP"
+                  }].map((vertical, idx) => (
                     <li key={idx}>
                       <Link
                         href={vertical.href}
@@ -413,6 +416,7 @@ const Header: React.FC = () => {
             <div className="text-gray-400 text-sm">
               © {new Date().getFullYear()} STJ Group. All rights reserved.
             </div>
+              <div className="mt-4 text-gray-400 text-sm">STJ ESTATES LIMITED</div>
           </div>
         </div>
       </div>

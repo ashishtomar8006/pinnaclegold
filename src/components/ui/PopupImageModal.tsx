@@ -28,9 +28,9 @@ const PopupImageModal: React.FC<PopupImageModalProps> = ({
 
         {/* Image */}
         <Image
-          src="/images/header/popupimg.jpeg"
+          src="/images/header/popupimg1.jpeg"
           alt="Popup"
-          width={600}
+          width={300}
           height={600}
           className="w-full h-auto object-cover"
           priority

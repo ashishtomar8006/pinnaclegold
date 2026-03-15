@@ -253,6 +253,24 @@ export default function EnquireNowModal({
               />
             </div>
 
+            <div className="flex items-start gap-2 mt-2">
+              <input
+                type="checkbox"
+                id="terms"
+                className="h-4 w-4 rounded border-gray-300 text-[#c79a3a] focus:ring-[#c79a3a] mt-0.5"
+              />
+
+              <label
+                htmlFor="terms"
+                className="text-xs text-gray-500 block cursor-pointer"
+              >
+                I agree to receive updates and promotional offers from CP67 via
+                email, SMS, WhatsApp and RCS. I understand that I can
+                unsubscribe at any time.{" "}
+                <span className="text-[#c79a3a]">Terms of Use</span>
+              </label>
+            </div>
+
             {/* Footer */}
             <div className="mt-6 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
               <div className="text-xs text-gray-500 flex items-center gap-2">
@@ -275,9 +293,11 @@ export default function EnquireNowModal({
                   onClick={handleSubmit}
                   disabled={loading || !canSubmit}
                   className={`px-5 py-3 rounded-xl text-sm font-semibold transition shadow-md
-                    ${loading || !canSubmit
-                      ? "bg-gray-300 text-gray-600 cursor-not-allowed"
-                      : "bg-[#4b4f54] text-white hover:bg-[#3a3e42]"}`}
+                    ${
+                      loading || !canSubmit
+                        ? "bg-gray-300 text-gray-600 cursor-not-allowed"
+                        : "bg-[#4b4f54] text-white hover:bg-[#3a3e42]"
+                    }`}
                 >
                   {loading ? "Submitting..." : "Submit Enquiry"}
                 </button>
