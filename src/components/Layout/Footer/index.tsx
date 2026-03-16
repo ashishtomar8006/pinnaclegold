@@ -329,6 +329,19 @@ const Footer = () => {
                         </Link>
                       </li>
                     ))}
+
+                     <li>
+                        <Link
+                          href={"#"}
+                          className="relative pl-1 text-sm font-medium text-white/70 transition-all duration-200
+                                     hover:text-white hover:translate-x-1
+                                     before:absolute before:left-0 before:top-1/2 before:h-1 before:w-0 before:-translate-y-1/2
+                                     before:rounded-full before:bg-primary before:transition-all before:duration-300
+                                     hover:before:w-3"
+                        >
+                        FORUM By STJ GROUP
+                        </Link>
+                      </li>
                   </ul>
                 </div>
               </div>
@@ -338,7 +351,7 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="flex flex-col items-start justify-between gap-4 py-6 text-sm font-medium text-white/50 sm:flex-row sm:items-center sm:py-8">
-          <p>© {new Date().getFullYear()} Real State. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Real State. All rights reserved. <br /><span className="text-white">STJ ESTATES LIMITED</span></p>
           {/* <div className="flex flex-wrap gap-x-6 gap-y-2">
             <Link
               href="#"

@@ -264,7 +264,7 @@ export default function EnquireNowModal({
                 htmlFor="terms"
                 className="text-xs text-gray-500 block cursor-pointer"
               >
-                I agree to receive updates and promotional offers from CP67 via
+                I agree to receive updates and promotional offers from  STJ GROUP via
                 email, SMS, WhatsApp and RCS. I understand that I can
                 unsubscribe at any time.{" "}
                 <span className="text-[#c79a3a]">Terms of Use</span>
