@@ -1,10 +1,16 @@
 "use client"
 
-import { useEffect, useState } from 'react'
+import { use, useEffect, useState } from 'react'
 import ClientLayout from '@/components/ClientLayout'
 import VideoBackgroundLoader from '@/components/Home/LogoLoader'
+import { useRouter } from 'next/navigation'
 
 export default function Home() {
+  const router = useRouter()
+  useEffect(() => {
+    router.push('/home')
+  }, [])
+
   const [showLoader, setShowLoader] = useState(true)
  const [isClient, setIsClient] = useState(false)
 
