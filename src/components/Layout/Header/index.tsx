@@ -219,7 +219,7 @@ const Header: React.FC = () => {
           </nav>
         </div>
       </header>
-      <PopupImageModal open={showPopup} onClose={() => setShowPopup(false)} />
+      {/* <PopupImageModal open={showPopup} onClose={() => setShowPopup(false)} /> */}
 
       {/* Floating CTA Buttons – Desktop (right side, rotated like screenshot) */}
       <div className="hidden md:flex fixed right-[20px] bottom-40 -translate-y-1/2 z-40 flex-col gap-4">
