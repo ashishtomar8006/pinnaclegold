@@ -16,7 +16,15 @@ export default function RootLayout({
   }: Readonly<{children: React.ReactNode}>) {
   return (
     <html lang="en">
+       <head>
+        <meta
+          name="facebook-domain-verification"
+          content="hqh1038velf3zbszgled709aj04uh9"
+        />
+      </head>
+
       <body className={`${font.className} bg-white dark:bg-black antialiased`}>
+
         {children}
         <Script
           id="xbotic-widget"
