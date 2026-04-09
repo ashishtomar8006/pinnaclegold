@@ -52,7 +52,7 @@ export default function AboutSection() {
               </h1>
 
               <p className="text-lg text-gray-600 leading-relaxed">
-              The address on your business card can change everything. Rising majestically in Sector 83A, IT City Mohali, The Pinnacle by STJ Group is not just an address—it’s a crown. Designed for visionaries, legacy-builders, and empire-makers, The Pinnacle delivers world-class infrastructure, breathtaking amenities, and an environment that fuels ambition as powerfully as it inspires awe.
+              The address on your business card can change everything. Rising majestically in Sector 83A, IT City Mohali, The Pinnacle by STJ ESTATES LIMITED is not just an address—it’s a crown. Designed for visionaries, legacy-builders, and empire-makers, The Pinnacle delivers world-class infrastructure, breathtaking amenities, and an environment that fuels ambition as powerfully as it inspires awe.
               </p>
             </div>
 
