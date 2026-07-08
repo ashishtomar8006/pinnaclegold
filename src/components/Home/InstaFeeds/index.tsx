@@ -15,24 +15,24 @@ const INSTAGRAM_PROFILE_URL = "https://www.instagram.com/thepinnaclebystj";
 const posts: InstagramPost[] = [
   {
     id: "18129831355504221",
-    href: "https://www.instagram.com/reel/DSXVlVmgaBa/?igsh=MWx3NXF1b2ozcDlkcA%3D%3D",
+    href: "https://www.instagram.com/p/DXWqUlrgUir/",
     image:
-      "/images/instafeed/instafeed1.jpg",
+      "/images/instafeed/instafeednew-1.jpg",
     alt: "Soft sunlight, quiet corners, and moments to pause. Mornings at Homeland Regalia begin unhurried, where calm, comfort, and elegance set the tone for the day.",
     isVideo: true,
   },
   {
     id: "18089035277072084",
-    href: "https://www.instagram.com/reel/DSmzhHegcNs/?igsh=MWMyNzZjaWlxYzZzeQ%3D%3D",
+    href: "https://www.instagram.com/p/DXMYZgoD8rm/",
     image:
-      "/images/instafeed/instafeed2.jpg",
+      "/images/instafeed/instafeednew-2.jpg",
     alt: "Sunlit interiors, quiet comfort, and time to simply be. At Homeland Regalia, days unfold gracefully within thoughtfully designed living spaces that feel calm, refined, and deeply personal.",
   },
   {
     id: "18029816363566295",
-    href: "https://www.instagram.com/reel/DRhLVWJAUAd/?igsh=OWxxNm1jZmpuYnV6&wa_logging_event=video_play_open",
+    href: "https://www.instagram.com/p/DXErGEQATuo/",
     image:
-      "/images/instafeed/instafeed3.jpg",
+      "/images/instafeed/instafeednew-3.jpg",
     alt: "As the day slows, serenity takes over. Evenings at Homeland Regalia unfold in warmth and stillness, where luxury feels personal, and peace feels complete.",
     isVideo: true,
   },

@@ -15,7 +15,7 @@ export default function RootLayout({
   children,
   }: Readonly<{children: React.ReactNode}>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
        <head>
         <meta
           name="facebook-domain-verification"
@@ -23,7 +23,7 @@ export default function RootLayout({
         />
       </head>
 
-      <body className={`${font.className} bg-white dark:bg-black antialiased`}>
+      <body className={`${font.className} bg-white dark:bg-black antialiased`} suppressHydrationWarning>
 
         {children}
         <Script

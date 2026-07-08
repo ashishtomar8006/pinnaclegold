@@ -229,12 +229,12 @@ const Header: React.FC = () => {
             closeMenu();
             setEnquireOpen(true);
           }}
-          className="origin-right -rotate-90 cursor-pointer mb-50 block text-center px-4 py-3 rounded-tl-lg rounded-tr-lg bg-[#c79a3a] text-white text-sm font-semibold tracking-[0.15em] shadow-lg hover:bg-[#b4892f] transition-colors"
+          className="origin-right uppercase -rotate-90 cursor-pointer mb-50 block text-center px-4 py-3 rounded-tl-lg rounded-tr-lg bg-[#c79a3a] text-white text-sm font-semibold tracking-[0.15em] shadow-lg hover:bg-[#b4892f] transition-colors"
         >
-          ENQUIRE NOW
+          Request Call Back
         </button>
 
-        <Link
+        {/* <Link
           href="/Brochure-minj.pdf"
           download
           target="_blank"
@@ -242,7 +242,7 @@ const Header: React.FC = () => {
           className="origin-right -rotate-90 flex gap-2 text-center px-4 py-3 rounded-tl-lg rounded-tr-lg bg-[#4b4f54] text-white text-sm font-semibold tracking-[0.15em] shadow-lg hover:bg-[#3a3e42] transition-colors"
         >
           <Download className="rotate-90" /> DOWNLOAD BROCHURE
-        </Link>
+        </Link> */}
       </div>
 
       {/* Floating CTA Buttons – Mobile (bottom-right, non-rotated for usability) */}

@@ -7,9 +7,9 @@ import { useRouter } from 'next/navigation'
 
 export default function Home() {
   const router = useRouter()
-  useEffect(() => {
-    router.push('/home')
-  }, [])
+  // useEffect(() => {
+  //   router.push('/home')
+  // }, [])
 
   const [showLoader, setShowLoader] = useState(true)
  const [isClient, setIsClient] = useState(false)
