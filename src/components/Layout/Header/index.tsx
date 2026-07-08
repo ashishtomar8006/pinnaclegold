@@ -253,12 +253,12 @@ const Header: React.FC = () => {
             closeMenu();
             setEnquireOpen(true);
           }}
-          className="px-4 py-2 text-center rounded-full border border-primary bg-white/90 text-primary text-xs font-semibold shadow-lg hover:bg-primary hover:text-white transition-colors"
+          className="px-4 py-2 uppercase text-center rounded-full border border-primary bg-white/90 text-primary text-xs font-semibold shadow-lg hover:bg-primary hover:text-white transition-colors"
         >
-          Enquire Now
+         Request Call Back
         </Link>
 
-        <Link
+        {/* <Link
           href="/Brochure-minj.pdf"
           download
           target="_blank"
@@ -266,7 +266,7 @@ const Header: React.FC = () => {
           className="px-4 py-2 flex justify-center items-center gap-4 rounded-full bg-primary text-white text-xs font-semibold shadow-lg hover:bg-primary/90 transition-colors"
         >
           <Download /> Download Brochure
-        </Link>
+        </Link> */}
       </div>
       {/* Overlay for Sidebar */}
       {navbarOpen && (
