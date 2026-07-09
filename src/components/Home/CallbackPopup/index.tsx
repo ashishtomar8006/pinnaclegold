@@ -40,7 +40,7 @@ const CallbackPopup = () => {
         {/* Image popup */}
         {showImagePopup && !showFormModal && (
           <div
-            className="relative w-full max-w-md rounded-2xl overflow-hidden shadow-2xl"
+            className="relative w-full max-w-2xl rounded-2xl overflow-hidden shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close button */}
@@ -52,12 +52,13 @@ const CallbackPopup = () => {
             </button>
 
             {/* Image */}
-            <div className="relative w-full aspect-[3/4]">
+            <div className="relative w-full">
               <Image
                 src="/images/hero/initialformbg.jpeg"
                 alt="Request a Call Back"
-                fill
-                className="object-cover"
+                width={1200}
+                height={1500}
+                className="w-full h-auto block"
               />
               {/* Overlay gradient */}
               <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/30" />

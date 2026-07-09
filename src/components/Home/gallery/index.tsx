@@ -8,15 +8,14 @@ import "yet-another-react-lightbox/styles.css"
 
 // 10+ photos – mix of portrait/landscape for "small + big" feel
 const photos: Photo[] = [
-  { src: "/images/gallery/galleryimage1.jpeg", width: 1600, height: 900 },
-  { src: "/images/gallery/galleryimage2.jpeg", width: 900, height: 1200 },
-  { src: "/images/gallery/galleryimage3.jpeg", width: 1400, height: 900 },
-  { src: "/images/gallery/galleryimage4.jpeg", width: 900, height: 1000 },
-  { src: "/images/gallery/galleryimage5.jpeg", width: 1600, height: 1000 },
-  { src: "/images/gallery/galleryimage6.jpeg", width: 1200, height: 1100 },
-  { src: "/images/gallery/galleryimage7.jpeg", width: 900, height: 700 },
-  { src: "/images/gallery/galleryimage2.jpeg", width: 1600, height: 900 },
-//   { src: "/images/gallery/galleryimage9.jpeg", width: 900, height: 600 },
+  { src: "/images/gallery/galleryimage1.jpeg", width: 1872, height: 3328 },
+  { src: "/images/gallery/galleryimage2.jpeg", width: 2100, height: 3736 },
+  { src: "/images/gallery/galleryimage3.jpeg", width: 2100, height: 3736 },
+  { src: "/images/gallery/galleryimage4.jpeg", width: 2340, height: 4160 },
+  { src: "/images/gallery/galleryimage5.jpeg", width: 2100, height: 3736 },
+  { src: "/images/gallery/galleryimage6.jpeg", width: 1714, height: 3046 },
+  { src: "/images/gallery/galleryimage7.jpeg", width: 2100, height: 3736 },
+  { src: "/images/gallery/galleryimage2.jpeg", width: 2100, height: 3736 },
 ]
 
 const GallerySection = () => {
@@ -38,20 +37,6 @@ const GallerySection = () => {
           }}
           spacing={12}
           onClick={({ index }) => setIndex(index)}
-          render={{
-            image: (props) => (
-              <img
-                {...props}
-                style={{
-                  ...props.style,
-                  objectFit: "cover",
-                  width: "100%",
-                  height: "100%",
-                  display: "block",
-                }}
-              />
-            ),
-          }}
         />
 
         <Lightbox open={index >= 0} index={index} close={() => setIndex(-1)} slides={photos} />
