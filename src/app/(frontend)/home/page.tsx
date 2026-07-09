@@ -13,10 +13,12 @@ import DirectorSection from '@/components/Home/director/page'
 import PinnacleGallery from '@/components/Home/gallery'
 import InstagramFeed from '@/components/Home/InstaFeeds'
 import WhatsAppFloat from "@/components/whatsapp/WhatsAppFloat";
+import CallbackPopup from "@/components/Home/CallbackPopup";
 
 export default function Home() {
   return (
     <main>
+      <CallbackPopup />
       <Hero />
       <AboutSection />
       <DirectorSection />
