@@ -17,6 +17,7 @@ export const testimonials: Testimonial[] = [
     and construction itself becomes a statement of ambition, vision, and sophistication.`,
     
     position: "Contractor",
+    label: "Contractor",
   },
   {
     image: "/images/users/zafar-img.png",
@@ -24,5 +25,6 @@ export const testimonials: Testimonial[] = [
     review: `The interior planning is orchestrated by 'Zafar', a maestro in the world of interior design.
     His vision transforms spaces into a symphony of elegance and comfort, where every room tells story of style and sophistication. With Hafeez Contractor's architectural prowess and Zafar's artistic finesse, THE PINNACLE becomes the epitome of unparalleled living.`,    
     position: "Interior Designer",
+    label: "Interior Designer",
   },
 ];

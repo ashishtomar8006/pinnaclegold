@@ -63,7 +63,7 @@ const Testimonial = () => {
                   
                       <h2 className="lg:text-52 text-40 font-medium text-white flex items-center gap-4 mb-6">
             <Icon icon="ph:house-simple-fill" className="text-2xl text-primary" />   
-            The Architect
+           {item.label}
           </h2>
                     </div>
                     <h4 className="text-gray-400 whitespace-pre-line leading-relaxed">{item.review}</h4>

@@ -5,7 +5,7 @@ const GetInTouch: React.FC = () => {
   return (
     <section>
       <div className="container max-w-8xl mx-auto px-5 2xl:px-0">
-        <div className="relative rounded-2xl overflow-hidden lg:py-64 md:py-28 py-10">
+        <div className="relative rounded-2xl overflow-hidden lg:py-64 md:py-28 py-0 min-h-[260px] sm:min-h-[340px] md:min-h-0">
           {" "}
           {/* Moved padding to parent to define height */}
           <video

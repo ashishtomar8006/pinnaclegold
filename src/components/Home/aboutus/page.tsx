@@ -45,7 +45,7 @@ export default function AboutSection() {
             {/* Main heading */}
             <div className="space-y-6">
               <h1 className="text-4xl lg:text-4xl font-bold text-[#c8ac6e] leading-tight">
-              The Pinnacle. <br />
+              The Pinnacle By STJ. <br />
                 <span className="text-sage-600"> Built for POWER & PRESTIGE
 
                 </span>
