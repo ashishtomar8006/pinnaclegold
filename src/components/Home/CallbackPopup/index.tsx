@@ -60,7 +60,6 @@ const CallbackPopup = () => {
 
       if (data.status === 1 || data.status === 200) {
         setSubmitState("success")
-        setTimeout(closeAll, 2500)
       } else {
         setSubmitState("error")
         setErrorMsg(data.message || "Something went wrong. Please try again.")
@@ -129,10 +128,24 @@ const CallbackPopup = () => {
             <p className="text-gray-500 text-sm text-center mb-6">Our team will reach out to you shortly.</p>
 
             {submitState === "success" ? (
-              <div className="text-center py-8">
-                <div className="text-4xl mb-3">✅</div>
-                <p className="text-green-600 font-semibold text-lg">Call Initiated!</p>
-                <p className="text-gray-500 text-sm mt-1">You will receive a call shortly.</p>
+              <div className="text-center py-6 flex flex-col items-center gap-3">
+                <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center">
+                  <svg className="w-8 h-8 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-800">Your Call is Scheduled!</h3>
+                <p className="text-gray-500 text-sm leading-relaxed max-w-xs">
+                  Thank you, <span className="font-semibold text-gray-700">{formData.name}</span>! You will receive a call from
+                </p>
+                <div className="bg-[#c8ac6e]/10 border border-[#c8ac6e]/30 rounded-xl px-5 py-3">
+                  <p className="text-[#c8ac6e] font-bold text-lg tracking-wide">
+                    +91 80-35013322
+                  </p>
+                </div>
+                <p className="text-gray-400 text-xs leading-relaxed max-w-xs">
+                  Please keep your phone reachable. Our expert will connect with you shortly to assist you further.
+                </p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="flex flex-col gap-4">
