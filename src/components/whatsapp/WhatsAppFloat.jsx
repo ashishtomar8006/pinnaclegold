@@ -56,7 +56,7 @@ export default function WhatsAppFloat() {
       <div className="wa-bubble">Connect with The Pinnacle By STJ on WhatsApp</div>
 
       <a
-        href="https://api.whatsapp.com/send/?phone=917230972309&text=Connect+with+The+Pinnacle+By+STJ+on+WhatsApp&type=phone_number&app_absent=0"
+        href="https://api.whatsapp.com/send/?phone=918344583445&text=I+would+like+Experience+The+Pinnacle+By+STJ&type=phone_number&app_absent=0"
         className="wa-float"
         target="_blank"
         rel="noopener noreferrer"
