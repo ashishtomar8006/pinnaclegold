@@ -27,7 +27,7 @@ export default function RootLayout({
 
         {children}
         <Script
-          id="xbotic-widget"
+          id="orai-widget"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
@@ -41,13 +41,12 @@ export default function RootLayout({
                 c.appendChild(n);
               }(
                 document,
-                "https://xbotic.cbots.live",
+                "https://app.orai-robotics.in",
                 {
-                  bot_key: "5bf549eb79724629",
-                  launch_flow: "C9E5ECE78D7A4BE3ADBC70B628391AA7",
+                  bot_key: "89d350c3c0fe4b72",
                   welcome_msg: true,
-                  branding_key: "xbotic",
-                  server: "https://xbotic.cbots.live",
+                  branding_key: "orairobotics",
+                  server: "https://app.orai-robotics.in",
                   e: "p",
                 }
               );
